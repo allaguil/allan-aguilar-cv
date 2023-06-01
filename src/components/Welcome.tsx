@@ -21,7 +21,13 @@ export const Welcome: React.FC = () => {
 
     const cvTechDiv = {
         display: 'flex',
-        flexDirection: {xs:'column', md:'row'}
+        flexDirection: {xs:'column', md:'row'},
+    }
+
+    const techPara = {
+        fontSize: '18px',
+        fontFamily: 'Pangolin',
+        width: {xs:'100%', md:'50%'}
     }
 
     const arrowIcon = {
@@ -30,10 +36,18 @@ export const Welcome: React.FC = () => {
         animation: 'fadeIn 2s'
     }
 
+    const iconsDiv = {
+        display: 'flex',
+        justifyContent: {xs: 'space-between'},
+        position:'relative',
+        bottom:'10px',
+        width: {xs:'100%', md:'50%'},
+    }
+
     return (
         <>
             <Container>
-                <Box mt={2}>
+                <Box mt={4}>
                     <Typography variant='h1' sx={welcomeHTML}>Hey there, Welcome!</Typography>
                 </Box>
                 <Box>
@@ -41,14 +55,14 @@ export const Welcome: React.FC = () => {
                     <Typography variant='body1' mt={1} sx={{ padding: '0 20px', fontSize: '18px', fontFamily: 'Pangolin' }}><span style={{ fontSize: '24px', }}>I'm Allan</span>, I'm a <span style={{ fontSize: '24px', }}>Front End Developer</span>, I have over 10 years of work experience, I'm currently working as a Front End Developer for Critical Mass, with previous experience working for prestigious Corporates like Intel Corporation, Western Union, Cisco Systems and Citi Bank.</Typography>
 
                     <Container sx={cvTechDiv}>
-                        <Typography variant='body1' mt={1} sx={{ fontSize: '18px', fontFamily: 'Pangolin' }}><span style={{ fontSize: '24px', }}>I've Developed</span> this <span style={{ fontSize: '24px', }}>Online Resume</span> with these technologies</Typography>
+                        <Typography variant='body1' mt={1} sx={techPara}><span style={{ fontSize: '24px', }}>I've Developed</span> this <span style={{ fontSize: '24px', }}>Online Resume</span> with these technologies,</Typography>
                         <EastIcon sx={arrowIcon}/>
-                        <Box sx={{display: 'flex', position:'relative', bottom:'10px'}}>
-                        <img src={react} style={{ width: "35px", padding: '10px', animation: 'fadeIn 2s', }} /> 
-                        <img src={typeScript} style={{ width: "30px", padding: '5px', animation: 'fadeIn 2s', }} />
-                        <img src={materialUI} style={{ width: "35px", padding: '12px', animation: 'fadeIn 2s', }} />
-                        <img src={jest} style={{ width: "32px", padding: '10px 3px', animation: 'fadeIn 2s', }} />
-                        <img src={github} style={{ width: "30px", padding: '20px 10px', animation: 'fadeIn 2s', }} />
+                        <Box sx={iconsDiv}>
+                        <img src={react} style={{ width: "50px", padding: '10px 10px 10px 0px', animation: 'fadeIn 2s', }} /> 
+                        <img src={typeScript} style={{ width: "43px", padding: '5px', animation: 'fadeIn 2s', }} />
+                        <img src={materialUI} style={{ width: "50px", padding: '12px', animation: 'fadeIn 2s', }} />
+                        <img src={jest} style={{ width: "48px", padding: '10px 3px', animation: 'fadeIn 2s', }} />
+                        <img src={github} style={{ width: "45px", padding: '20px 10px', animation: 'fadeIn 2s', }} />
                         </Box>
                     </Container>
                 </Box>

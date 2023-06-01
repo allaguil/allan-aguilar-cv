@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from 'react';
 import { useEffect, useState } from "react";
 
 import { BannerGrid } from "../layouts/BannerGrid";
@@ -10,7 +10,7 @@ interface Props {
 }
 
 // We MUST use an 'interface' when receiving props (navState)
-export const Banner:React.FC<Props> = ({ navState }) => {
+export const Banner: FC<Props> = ({ navState }) => {
 
     // "useState<React.CSSProperties>" is used to define the type of the 'state' variable when it is a CSS const 
     const [bannerState, setBannerState] = React.useState<boolean>(true);
@@ -20,7 +20,7 @@ export const Banner:React.FC<Props> = ({ navState }) => {
         navState === '/' ? setBannerState(true) : setBannerState(false);
     }, [navState])
 
-    // Este Efecto solo se corre la primera vez en el Loading
+    // Este Efecto solo se corre la primera vez que carga el componente en el Loading
     useEffect(() => {
         navState === '/' ? setBannerState(true) : setBannerState(false);
     }, []);
