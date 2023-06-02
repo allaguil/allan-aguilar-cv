@@ -1,11 +1,11 @@
 import { Box, Container, Typography } from '@mui/material'
 import React from 'react'
 
-import react from '../assets/react.svg' // declaration.d.ts
-import typeScript from '../assets/ts.svg' // declaration.d.ts
-import materialUI from '../assets/materialUI.svg' // declaration.d.ts
-import jest from '../assets/jest.svg' // declaration.d.ts
-import github from '../assets/github.svg' // declaration.d.ts
+import react from '../assets/react.svg'
+import typeScript from '../assets/ts.svg'
+import materialUI from '../assets/materialUI.svg'
+import jest from '../assets/jest.svg'
+import github from '../assets/github.svg'
 
 import EastIcon from '@mui/icons-material/East'; // Arrow Icon
 
