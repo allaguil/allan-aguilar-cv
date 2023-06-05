@@ -2,7 +2,11 @@ import { Container, Typography } from '@mui/material';
 import React, { FC } from 'react';
 import { WorkExpCardGrid } from '../layouts/WorkExpCardGrid';
 
-export const WorkExp: FC = () => {
+interface Props {
+    setNavState: React.Dispatch<React.SetStateAction<string>>;
+  }
+
+export const WorkExp: FC<Props> = ({ setNavState }) => {
     return (
         <>
             <Container>
@@ -13,7 +17,7 @@ export const WorkExp: FC = () => {
                     textAlign: { xs:'center', md:'left' },
                 }}>Work Experience</Typography>
                 <Container sx={{ display:'flex', marginBottom: '40px', flexWrap: 'wrap', justifyContent:'space-between', width: {sm:'83%', md:'100%'} }}>
-                    <WorkExpCardGrid />
+                    <WorkExpCardGrid setNavState={setNavState} />
                 </Container>
             </Container>
         </>

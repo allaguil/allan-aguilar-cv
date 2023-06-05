@@ -10,6 +10,8 @@ import { Box } from '@mui/material';
 import { workExpData } from '../helpers/workExpData';
 import { Link } from 'react-router-dom';
 
+import { cardDiv, cardBox, logo, pangolinFont } from './WorkExpCardGrid.styles';
+
 interface DataObject {
     company: string,
     role: string,
@@ -17,41 +19,32 @@ interface DataObject {
     img: string,
 };
 
-export const WorkExpCardGrid: React.FC = () => {
+interface Props {
+    setNavState: React.Dispatch<React.SetStateAction<string>>;
+  }
+
+export const WorkExpCardGrid: React.FC<Props> = ({setNavState}) => {
+
     return (
         <>
             {workExpData.map((item: DataObject) => (
-                <Card key={item.company} sx={{ maxWidth: 250, margin: { xs: '20px auto', lg: '20px', boxShadow: '0px 2px 10px 1px rgba(0,0,0,0.2)', } }}>
-
-                    <Box style={{ height: 140, width: 220, margin: '0 auto' }}>
-                        <CardMedia
-                            sx={{
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                height: '100%',
-                                backgroundSize: '80% auto',
-                            }}
-                            image={item.img}
-                            title={item.company}
-                        />
+                <Card key={item.company} sx={cardDiv}>
+                    <Box style={cardBox}>
+                        <CardMedia sx={logo} image={item.img} title={item.company} />
                     </Box>
-
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
+                    <CardContent sx={{padding:'0px 20px'}}>
+                        <Typography gutterBottom variant="h5" component="div" sx={pangolinFont}>
                             {item.company}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography variant="body2" color="text.secondary" sx={pangolinFont}>
                             {item.role}
                         </Typography>
                     </CardContent>
-
-                    <CardActions>
-                        <Link to="/work">
-                            <Button size="small">Learn More</Button>
+                    <CardActions sx={{padding:'10px 15px'}}>
+                        <Link to="/work" >
+                            <Button onClick={() => setNavState('/work')} size="small" sx={pangolinFont} >Learn More</Button>
                         </Link>
                     </CardActions>
-
                 </Card>
             ))}
         </>

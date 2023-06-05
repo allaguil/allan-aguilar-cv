@@ -18,14 +18,14 @@ export const CvApp: FC = () => {
 
   return (
     <>
-        <NavBar setNavState={setNavState} />
-        <Banner navState={navState} />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/work' element={<Work />} />
-          <Route path='/skills' element={<Skills />} />
-          <Route path='/projects' element={<Projects />} />
-        </Routes>
+      <NavBar setNavState={setNavState} />
+      <Banner navState={navState} />
+      <Routes>
+        <Route path='/' element={<Home setNavState={setNavState} />} />
+        <Route path='/work' element={<Work />} />
+        <Route path='/skills' element={<Skills />} />
+        <Route path='/projects' element={<Projects />} />
+      </Routes>
     </>
   )
 }
