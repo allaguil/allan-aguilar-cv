@@ -2,52 +2,21 @@
 
 import { Box, Typography } from '@mui/material';
 import { styled } from '@mui/system';
-import BannerImg from '../assets/web-world.jpg' // declaration.d.ts
 
-//Banner
-export const ResponsiveBanner = styled(Box)(({ theme }) => ({
-    backgroundColor: '#000',
-    backgroundImage: `url(${BannerImg})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    // transition: 'width 2s, height 2s',
 
-    width: '100%',
-    height: '520px',
-    [theme.breakpoints.down('sm')]: {
-        backgroundPosition: '-290px',
-        height: '372px',
-    },
-    [theme.breakpoints.up('sm')]: {
-        backgroundPosition: 'center center',
-        height: '380px',
-    },
-    [theme.breakpoints.up('md')]: {
-        backgroundPosition: 'center center',
-        height: '520px',
-    },
-}));
-
-// Hide Banner
-export const hideBanner = {
-    backgroundColor: '#000',
-    backgroundImage: `url(${BannerImg})`,
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    height: '0px',
- //   transition: 'width 3s, height 3s',
-    animation: 'slideUp 3s',
-    width: '100%'
-}
-
-// Banner Parent Content Div
-export const bannerDivHTML = {
+// Main contentDiv
+export const contentDiv = {
     display: 'flex',
     flexDirection: { xs: 'column', sm: 'row' },
-    width:'100%',
-    paddingTop: '40px',
-    justifyContent: { sm: 'space-between' },
+    width: '100%',
+    paddingTop: { xs: '40px', sm: '40px' },
+    justifyContent: { sm: 'center' },
+}
+
+// Left Div
+export const leftDiv = {
+    flexBasis: '100%',
+    paddingTop: { sm: '40px' },
 }
 
 // Online Resume
@@ -58,8 +27,8 @@ export const bannerOnlineResumeHTML = {
     display: 'flex',
     fontSize: { xs: '42px', md: '52px' },
     textShadow: '2px 3px 4px #000000',
-    transitionDelay: '1.6s',
-    animation: 'fadeIn 1s',
+    transitionDelay: '9s',
+    animation: 'fadeIn 3s',
 }
 
 // Div Banner Parent for Name and Web Dev Content 
@@ -67,7 +36,8 @@ export const bannerTxtHTML = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-end',
-    width:'100%',
+    width: '100%',
+    paddingTop: { sm: '40px' },
 }
 
 // Banner Name 
@@ -76,8 +46,8 @@ export const bannerNameHTML = {
     color: { xs: '#76ffff' },
     fontSize: { xs: '32px', md: '42px' },
     textShadow: '2px 2px 4px #000000',
-    transitionDelay: '1.6s',
-    animation: 'fadeIn 1s',
+    transitionDelay: '9s',
+    animation: 'fadeIn 3s',
 }
 
 // Banner Web Dev
@@ -86,17 +56,17 @@ export const bannerWebDevHTML = {
     color: { xs: '#F5E71F' },
     fontSize: { xs: '30px', md: '40px' },
     textShadow: '2px 2px 4px #000000',
-    transitionDelay: '1.6s',
-    animation: 'fadeIn 1s',
+    transitionDelay: '9s',
+    animation: 'fadeIn 3s',
 }
 
 //Banner SVG Logos
 export const BannerLogos = styled('img')(({ theme }) => ({
     width: "50px",
     padding: '10px',
-    animation: 'fadeIn 1s',
+    animation: 'fadeIn 2s',
     filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5))',
-    
+
     [theme.breakpoints.up('md')]: {
         width: "80px",
     },
@@ -122,18 +92,50 @@ export const BannerLogos = styled('img')(({ theme }) => ({
 
 
 
-export const Container = styled('div')({
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f5f5f5',
-});
+//Banner
+// export const ResponsiveBanner = styled(Box)(({ theme }) => ({
+//     backgroundColor: '#000',
+//     backgroundImage: `url(${BannerImg})`,
+//     backgroundRepeat: 'no-repeat',
+//     backgroundSize: 'cover',
+//     transition: 'height 0.3s ease, width 2s, height 2s',
+//     width: '100%',
+//     height: '520px',
 
-export const Title = styled('h1')({
-    fontSize: '24px',
-    color: '#333',
-});
+//     [theme.breakpoints.down('sm')]: {
+//         backgroundPosition: '-290px',
+//         height: '372px',
+//     },
+//     [theme.breakpoints.up('sm')]: {
+//         backgroundPosition: 'center center',
+//         height: '380px',
+//     },
+//     [theme.breakpoints.up('md')]: {
+//         backgroundPosition: 'center center',
+//         height: '520px',
+//     },
+// }));
 
-function img(img: any) {
-    throw new Error('Function not implemented.');
-}
+
+// Hide Banner
+// export const HideBanner = styled(Box)(({ theme }) => ({
+//     backgroundColor: '#000',
+//     backgroundImage: `url(${BannerImg})`,
+//     backgroundPosition: 'center',
+//     backgroundRepeat: 'no-repeat',
+//     backgroundSize: 'cover',
+//     height: '0px',
+//     width: '100%',
+//     transition: 'height 0.3s ease',
+//     overflow: 'hidden',
+//   }));
+
+
+// Banner Parent Content Div
+// export const bannerDivHTML = {
+//     display: 'flex',
+//     flexDirection: { xs: 'column', sm: 'row' },
+//     width: '100%',
+//     paddingTop: '40px',
+//     justifyContent: { sm: 'space-between' },
+// }

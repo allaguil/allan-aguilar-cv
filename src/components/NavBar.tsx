@@ -54,22 +54,19 @@ export const NavBar: React.FC<Props> = ({ setNavState }) => {
                     <Typography
                         variant="h6"
                         noWrap
-                        component={Link}
-                        to="/"
-                        onClick={handleNavClick}
+                        // component={Link}
+                        // to="/"
+                        // onClick={handleNavClick}
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'Pangolin',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: '#F5E71F',
-                            textDecoration: 'none',
                         }}
                     >
+
                         <CodeIcon sx={{ color: 'white', display: { xs: 'flex', md: 'flex' }, mr: .5, mt: .5 }} />
-                        HIRE ME
+                            <Link to="/" onClick={handleNavClick} style={{fontFamily: 'Pangolin', fontWeight: 700, letterSpacing: '.3rem', color: '#F5E71F', textDecoration: 'none'}}>HIRE ME</Link>
                         <CodeOffIcon sx={{ color: 'white', display: { xs: 'flex', md: 'flex' }, mt: .5 }} />
+
                     </Typography>
 
                     <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
@@ -116,31 +113,21 @@ export const NavBar: React.FC<Props> = ({ setNavState }) => {
                     <Typography
                         variant="h5"
                         noWrap
-                        component={Link}
-                        to="/"
-                        onClick={handleNavClick}
+                        // component={Link}
+                        // to="/"
+                        // onClick={handleNavClick}
                         sx={{
                             mr: 2, //margin-right
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 0,
                             position: 'relative',
                             margin: 'auto',
-                            fontFamily: 'Pangolin',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: '#F5E71F',
-                            textDecoration: 'none',
                         }}
                     >
 
-
-                        {/* <Link to={`/`}> */}
-                            <CodeIcon sx={{ color: 'white', display: { xs: 'flex', md: 'none' }, mr: .5, mt: .5 }} />
-                            HIRE ME
-                            <CodeOffIcon sx={{ color: 'white', display: { xs: 'flex', md: 'none' }, mt: .5 }} />
-                        {/* </Link> */}
-
-
+                        <CodeIcon sx={{ color: 'white', display: { xs: 'flex', md: 'none' }, mr: .5, mt: .5 }} />
+                            <Link to="/" onClick={handleNavClick} style={{fontFamily: 'Pangolin', fontWeight: 700, letterSpacing: '.3rem', color: '#F5E71F', textDecoration: 'none'}}>HIRE ME</Link>
+                        <CodeOffIcon sx={{ color: 'white', display: { xs: 'flex', md: 'none' }, mt: .5 }} />
                         
                     </Typography>
                     <Box sx={{ marginTop: '2px', flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
