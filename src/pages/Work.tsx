@@ -1,6 +1,17 @@
+import { WorkExp } from '../components/WorkExp';
+import React, { FC } from 'react';
+import { WorkPanel } from '../components/WorkPanel';
 
-export const Work = () => {
+interface Props {
+  setNavState: React.Dispatch<React.SetStateAction<string>>;
+}
+
+
+export const Work: FC<Props> = ({ setNavState }) => {
   return (
-    <div>Work</div>
+    <>
+      <WorkExp setNavState={setNavState} />
+      <WorkPanel />
+    </>
   )
 }

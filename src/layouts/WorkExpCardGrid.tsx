@@ -40,9 +40,9 @@ export const WorkExpCardGrid: React.FC<Props> = ({setNavState}) => {
                             {item.role}
                         </Typography>
                     </CardContent>
-                    <CardActions sx={{padding:'10px 15px'}}>
+                    <CardActions sx={{padding:'10px 15px', display:'flex', justifyContent:'center'}}>
                         <Link to="/work" >
-                            <Button onClick={() => setNavState('/work')} size="small" sx={pangolinFont} >Learn More</Button>
+                            <Button onClick={() => setNavState('/work')} size="small" sx={pangolinFont} className="shake" >Learn More</Button>
                         </Link>
                     </CardActions>
                 </Card>

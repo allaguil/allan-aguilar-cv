@@ -9,7 +9,7 @@ export const Banner: FC<Props> = ({ navState }) => {
   const [bannerState, setBannerState] = useState<string>('show-banner');
 
   useEffect(() => {
-    navState === '/' ? setBannerState('show-banner') : setBannerState('hide-banner');
+    setBannerState(navState === '/' ? 'show-banner' : 'hide-banner');
   }, [navState]);
 
   return <BannerGrid bannerState={bannerState} />;
