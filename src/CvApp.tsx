@@ -22,7 +22,7 @@ export const CvApp: FC = () => {
       <Banner navState={navState} />
       <Routes>
         <Route path='/' element={<Home setNavState={setNavState} />} />
-        <Route path='/work' element={<Work />} />
+        <Route path='/work' element={<Work navState={navState} setNavState={setNavState} />} />
         <Route path='/skills' element={<Skills />} />
         <Route path='/projects' element={<Projects />} />
       </Routes>

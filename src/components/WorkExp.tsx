@@ -3,10 +3,11 @@ import React, { FC } from 'react';
 import { WorkExpCardGrid } from '../layouts/WorkExpCardGrid';
 
 interface Props {
-    setNavState: React.Dispatch<React.SetStateAction<string>>;
+    navState: string,
+    setNavState: React.Dispatch<React.SetStateAction<string>>,
   }
 
-export const WorkExp: FC<Props> = ({ setNavState }) => {
+export const WorkExp: FC<Props> = ({ navState, setNavState }) => {
     return (
         <>
             <Container>
@@ -17,7 +18,7 @@ export const WorkExp: FC<Props> = ({ setNavState }) => {
                     textAlign: { xs:'center', md:'left' },
                 }}>Work Experience</Typography>
                 <Container sx={{ display:'flex', marginBottom: '40px', flexWrap: 'wrap', justifyContent:'space-between', width: {sm:'83%', md:'100%'} }}>
-                    <WorkExpCardGrid setNavState={setNavState} />
+                    <WorkExpCardGrid navState={navState} setNavState={setNavState} />
                 </Container>
             </Container>
         </>

@@ -16,7 +16,7 @@ export const workExpData = [
         role: "Adobe Target Developer",
         description: "Responsible of creating UI AB Testing Experiences using Adobe Target for Citi Bank.",
         img: citiBank,
-        technologies: 'Adobe Target, Adobe Analytics, HTML, CSS, JS'
+        technologies: 'Adobe Target, Adobe Analytics, HTML, CSS, JS, jQuery'
     },
     {
         company: "Western Union",
