@@ -1,18 +1,21 @@
+import React, { FC, useEffect, useState } from 'react';
 import { WorkExp } from '../components/WorkExp';
-import React, { FC, useEffect } from 'react';
 import { WorkPanel } from '../components/WorkPanel';
+import { workExpData } from '../helpers/workExpData';
 
 interface Props {
   navState: string,
   setNavState: React.Dispatch<React.SetStateAction<string>>,
 }
 
-
 export const Work: FC<Props> = ({ navState, setNavState }) => {
+
+  const [cardSelected, setCardSelected] = useState<string>('');
+
   return (
     <>
-      <WorkExp navState={navState} setNavState={setNavState} />
-      <WorkPanel navState={navState} />
+      <WorkExp navState={navState} setNavState={setNavState} setCardSelected={setCardSelected} />
+      {cardSelected !== '' && <WorkPanel navState={navState} cardSelected={cardSelected} />}
     </>
   )
 }

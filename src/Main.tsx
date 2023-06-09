@@ -5,11 +5,11 @@ import { CvApp } from './CvApp';
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <BrowserRouter>
       <CvApp />
     </BrowserRouter>
-  </React.StrictMode>
+  // </React.StrictMode>
 )
 
 

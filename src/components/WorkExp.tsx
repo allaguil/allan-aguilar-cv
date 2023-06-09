@@ -5,9 +5,10 @@ import { WorkExpCardGrid } from '../layouts/WorkExpCardGrid';
 interface Props {
     navState: string,
     setNavState: React.Dispatch<React.SetStateAction<string>>,
+    setCardSelected: React.Dispatch<React.SetStateAction<string>>,
   }
 
-export const WorkExp: FC<Props> = ({ navState, setNavState }) => {
+export const WorkExp: FC<Props> = ({ navState, setNavState, setCardSelected }) => {
     return (
         <>
             <Container>
@@ -15,10 +16,11 @@ export const WorkExp: FC<Props> = ({ navState, setNavState }) => {
                     fontFamily: 'Pangolin',
                     fontSize: '38px',
                     padding: '0 20px',
-                    textAlign: { xs:'center', md:'left' },
+                    textAlign: { xs:'center', md:'left',
+                    animation: 'fadeIn 2s' },
                 }}>Work Experience</Typography>
                 <Container sx={{ display:'flex', marginBottom: '40px', flexWrap: 'wrap', justifyContent:'space-between', width: {sm:'83%', md:'100%'} }}>
-                    <WorkExpCardGrid navState={navState} setNavState={setNavState} />
+                    <WorkExpCardGrid navState={navState} setNavState={setNavState} setCardSelected={setCardSelected} />
                 </Container>
             </Container>
         </>

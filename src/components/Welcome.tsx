@@ -14,7 +14,7 @@ import { cursiveTypo, bigTypo, cvTechDiv, techPara, arrowIcon, iconsDiv } from '
 export const Welcome: React.FC = () => {
     return (
         <>
-            <Container>
+            <Container style={{animation: 'fadeIn 2s'}}>
                 <Box mt={4}>
                     <Typography variant='h1' sx={cursiveTypo}>Hey there, Welcome!</Typography>
                 </Box>
