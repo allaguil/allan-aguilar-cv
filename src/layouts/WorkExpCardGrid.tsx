@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 import { Box } from '@mui/material';
-import { workExpData } from '../helpers/workExpData';
+import { workExpData } from '../data/workExpData';
 import { Link } from 'react-router-dom';
 
 import { cardDiv, cardBox, logo, pangolinFont } from './WorkExpCardGrid.styles';
@@ -29,32 +29,29 @@ interface Props {
 
 export const WorkExpCardGrid: React.FC<Props> = ({ navState, setNavState, setCardSelected }) => {
 
+    const [cardActive, setCardActive] = useState<number | null>(null);
 
-
-
+    // Click to "Learn More" in "Work Experience" Component (/homePage)
     const handleWorkClick = (item: DataObject) => {
         setNavState('/work')
-        console.log(item.company)
         setCardSelected(item.company)
     }
 
-
-
-    const handleWorkPanel = (item: DataObject) => {
-        console.log(item.company)
+    // Click to "Card Arrow" in "Work Experience" Component (/workPage)
+    const handleWorkPanel = (item: DataObject, index: number) => {
         setCardSelected(item.company)
-      };
-
-
-
+        setCardActive(index);
+    };
 
     return (
         <>
-            {workExpData.map((item: DataObject) => (
+            {workExpData.map((item: DataObject, index: number) => (
                 <Card key={item.company} sx={cardDiv}>
+
                     <Box style={cardBox}>
                         <CardMedia sx={logo} image={item.img} title={item.company} />
                     </Box>
+
                     <CardContent sx={{ padding: '0px 20px' }}>
                         <Typography gutterBottom variant="h5" component="div" sx={pangolinFont}>
                             {item.company}
@@ -63,8 +60,23 @@ export const WorkExpCardGrid: React.FC<Props> = ({ navState, setNavState, setCar
                             {item.role}
                         </Typography>
                     </CardContent>
+
                     <CardActions sx={{ padding: '10px 15px', display: 'flex', justifyContent: 'center' }}>
-                        {navState !== '/work' ? <Link to="/work" ><Button onClick={ () => handleWorkClick(item) } size="small" sx={pangolinFont} className="shake" >Learn More</Button></Link> : <ExpandMoreIcon onClick={ () => handleWorkPanel(item) } sx={{fontSize:"2rem", cursor:'pointer', color:"#000",}} />}
+                        {
+
+                            (navState !== '/work') ?
+
+                                <Link to="/work" ><Button onClick={() => handleWorkClick(item)} size="small" sx={pangolinFont} className="shake" >Learn More</Button></Link> :
+
+                                <div style={{ display: 'flex', flexDirection: 'column' }}>
+
+                                    <ExpandMoreIcon onClick={() => handleWorkPanel(item, index)} sx={{ fontSize: "2rem", cursor: 'pointer', color: "#000", }} />
+
+                                    <div className="triangle" style={{ display: (cardActive === index) ? 'flex' : 'none', animation: 'fadeIn 1s', zIndex: '1', width: 0, height: 0, borderLeft: '25px solid transparent', borderRight: '25px solid transparent', borderBottom: '50px solid #fff', filter: 'drop-shadow(0px -3px 2px rgba(0,0,0,0.2))', position: 'absolute', marginTop: '53px', marginLeft: '-9px' }}></div>
+
+                                </div>
+
+                        }
                     </CardActions>
                 </Card>
             ))}

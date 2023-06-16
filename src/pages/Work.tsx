@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
-import { WorkExp } from '../components/WorkExp';
+import { WorkExp } from '../shared/WorkExp';
 import { WorkPanel } from '../components/WorkPanel';
-import { workExpData } from '../helpers/workExpData';
+import { workExpData } from '../data/workExpData';
 
 interface Props {
   navState: string,

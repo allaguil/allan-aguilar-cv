@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { NavBar } from './components/NavBar';
 import { Projects } from './pages/Projects';
@@ -18,13 +18,19 @@ export const CvApp: FC = () => {
 
   return (
     <>
-      <NavBar setNavState={setNavState} />
+      <NavBar setNavState={ setNavState } />
       <Banner navState={navState} />
+      
       <Routes>
         <Route path='/' element={<Home setNavState={setNavState} />} />
         <Route path='/work' element={<Work navState={navState} setNavState={setNavState} />} />
         <Route path='/skills' element={<Skills />} />
         <Route path='/projects' element={<Projects />} />
+
+        <Route path='/*' element={<Navigate to='/' /> } />
+
+        {/* <Route path='/*' element={<Home setNavState={setNavState} />} /> */}
+        {/* Para enviar al usuario al HomePage si intenta ingresar a una ruta que NO existe! */}
       </Routes>
     </>
   )

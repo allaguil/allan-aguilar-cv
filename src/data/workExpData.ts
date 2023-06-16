@@ -9,27 +9,35 @@ export const workExpData = [
         role: "Web Analytics Analyst",
         description: "Responsible of creating and maintaining the Tracking implementation to ensure data is being collected properly for Intel.",
         img: intel,
-        technologies: 'AEM, Adobe Target, Adobe Analytics, Tealium, JS'
+        technologies: 'AEM, Adobe Target, Adobe Analytics, Tealium, JS, CSS, Jira',
+        urlValue: 'www.intel.com',
+        url: 'https://www.intel.com/',
     },
     {
         company: "Citi Bank",
         role: "Adobe Target Developer",
         description: "Responsible of creating UI AB Testing Experiences using Adobe Target for Citi Bank.",
         img: citiBank,
-        technologies: 'Adobe Target, Adobe Analytics, HTML, CSS, JS, jQuery'
+        technologies: 'Adobe Target, Adobe Analytics, HTML, CSS, JS, jQuery, Jira',
+        urlValue: 'www.citi.com',
+        url: 'https://www.citi.com/',
     },
     {
         company: "Western Union",
         role: "Web Content Editor",
         description: "In charge of authoring the organization's content, images, media, Tagging, SEO good practices in AEM (CMS) using the Classic UI.",
         img: westernUnion,
-        technologies: 'AEM, HTML, CSS'
+        technologies: 'AEM, HTML, CSS, Jira',
+        urlValue: 'www.westernunion.com',
+        url: 'https://www.westernunion.com/',
     },
     {
         company: "Cisco Systems",
         role: "Web Designer",
-        description: "Responsible of the Web Design to different Cisco Communities, handling design softwares such as Photoshop and Illustrator.",
+        description: "Responsible of the Web Design to different internal and external Cisco Communities, handling design softwares such as Photoshop and Illustrator to provide the nice look and feel Design.",
         img: ciscoSystems,
-        technologies: 'HTML, Photoshop, Illustrator'
+        technologies: 'HTML, Photoshop, Illustrator',
+        urlValue: 'Behance Profile',
+        url: 'https://www.behance.net/allaguil',
     },
 ];

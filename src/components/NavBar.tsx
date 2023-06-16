@@ -9,12 +9,12 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import CodeIcon from '@mui/icons-material/Code';
 import CodeOffIcon from '@mui/icons-material/CodeOff';
+
+import { appBar, logoTypoDesk, codeIconDesk, hireMeLinkDesk, codeOffIconDesk } from './NavBar.styles';
 
 // We always use "React.Dispatch<React.SetStateAction<string>>" when using the 'useState' hook when used with a 'string' initial value.
 interface Props {
@@ -44,31 +44,11 @@ export const NavBar: React.FC<Props> = ({ setNavState }) => {
     };
 
     return (
-
-        <AppBar position="static" style={{ backgroundColor: "#000", boxShadow: "0 0 8px 0 rgb(12 54 107)" }}>
-
+        <AppBar position="static" sx={appBar}>
             <Container maxWidth="xl">
-
                 <Toolbar disableGutters>
-
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        // component={Link}
-                        // to="/"
-                        // onClick={handleNavClick}
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                        }}
-                    >
-
-                        <CodeIcon sx={{ color: 'white', display: { xs: 'flex', md: 'flex' }, mr: .5, mt: .5 }} />
-                            <Link to="/" onClick={handleNavClick} style={{fontFamily: 'Pangolin', fontWeight: 700, letterSpacing: '.3rem', color: '#F5E71F', textDecoration: 'none'}}>HIRE ME</Link>
-                        <CodeOffIcon sx={{ color: 'white', display: { xs: 'flex', md: 'flex' }, mt: .5 }} />
-
-                    </Typography>
-
+                    {/* MOBILE */}
+                    {/* Burguer Nav Menu Mobile */}
                     <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
@@ -80,6 +60,8 @@ export const NavBar: React.FC<Props> = ({ setNavState }) => {
                         >
                             <MenuIcon />
                         </IconButton>
+
+
                         <Menu
                             id="menu-appbar"
                             anchorEl={anchorElNav}
@@ -101,23 +83,19 @@ export const NavBar: React.FC<Props> = ({ setNavState }) => {
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
-                                        <Link style={{ textDecoration: "none", color: "#000", fontFamily: 'Pangolin', fontSize: '18px', textTransform: 'uppercase' }} className="nav-link" to={`/${page}`} onClick={handleNavClick}>
-                                            {page}
-                                        </Link>
+                                        <Link style={{ textDecoration: "none", color: "#000", fontFamily: 'Pangolin', fontSize: '18px', textTransform: 'uppercase' }} className="nav-link" to={`/${page}`} onClick={handleNavClick}>{page}</Link>
                                     </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
                     </Box>
 
+                    {/* Hire Me Logo Mobile */}
                     <Typography
                         variant="h5"
                         noWrap
-                        // component={Link}
-                        // to="/"
-                        // onClick={handleNavClick}
                         sx={{
-                            mr: 2, //margin-right
+                            mr: 2,
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 0,
                             position: 'relative',
@@ -125,17 +103,25 @@ export const NavBar: React.FC<Props> = ({ setNavState }) => {
                         }}
                     >
 
-                        <CodeIcon sx={{ color: 'white', display: { xs: 'flex', md: 'none' }, mr: .5, mt: .5 }} />
-                            <Link to="/" onClick={handleNavClick} style={{fontFamily: 'Pangolin', fontWeight: 700, letterSpacing: '.3rem', color: '#F5E71F', textDecoration: 'none'}}>HIRE ME</Link>
-                        <CodeOffIcon sx={{ color: 'white', display: { xs: 'flex', md: 'none' }, mt: .5 }} />
-                        
+                        <CodeIcon sx={codeIconDesk} />
+                        <Link to="/" onClick={handleNavClick} style={hireMeLinkDesk}>HIRE ME</Link>
+                        <CodeOffIcon sx={codeOffIconDesk} />
                     </Typography>
+
+                    {/* DESKTOP */}
+                    {/* Hire Me Logo - Desktop */}
+                    <Typography variant="h6" noWrap sx={logoTypoDesk}>
+                        <CodeIcon sx={codeIconDesk} />
+                        <Link to="/" onClick={handleNavClick} style={hireMeLinkDesk}>HIRE ME</Link>
+                        <CodeOffIcon sx={codeOffIconDesk} />
+                    </Typography>
+
+                    {/* Nav Links - Desktop */}
                     <Box sx={{ marginTop: '2px', flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
                                 key={page}
                                 onClick={handleNavClick}
-                                // onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block', margin: '0px 20px', fontFamily: 'Pangolin', fontSize: '16px' }}
                             >
                                 <Link style={{ textDecoration: "none", color: "white" }} className="nav-link" to={`/${page}`}>
@@ -145,9 +131,7 @@ export const NavBar: React.FC<Props> = ({ setNavState }) => {
                         ))}
                     </Box>
                 </Toolbar>
-
             </Container>
-
         </AppBar>
     );
 }
