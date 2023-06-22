@@ -2,24 +2,23 @@ import express from 'express';
 import { MongoClient } from 'mongodb';
 import cors from 'cors';
 
+import { config } from 'dotenv';
+config();
+
+const { DB_HOST, DB_PORT, API_KEY, DB_URI, DB_NAME, DB_COLLECTION } = process.env;
+
 const app = express();
-const port = 3001; // Choose the desired port number
 
 // Enable CORS for all routes
 app.use(cors());
 
-const uri = "mongodb+srv://aguilaaj90:Tornado11@allandb.ra9diul.mongodb.net/?retryWrites=true&w=majority";
-const client = new MongoClient(uri);
-
-// app.get('/', (req, res) => {
-//   res.send('Server is running'); // Send a simple response to indicate that the server is running
-// });
+const client = new MongoClient(DB_URI);
 
 app.get('/api/data', async (req, res) => {
   try {
     await client.connect();
-    const db = client.db('OnlineResume');
-    const collection = db.collection('WorkData');
+    const db = client.db(DB_NAME);
+    const collection = db.collection(DB_COLLECTION);
 
     // Find all documents in the collection
     const documents = await collection.find({}).toArray();
@@ -33,7 +32,6 @@ app.get('/api/data', async (req, res) => {
   }
 });
 
-
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`);
+app.listen(DB_PORT, () => {
+  console.log(`Server is running on port: ${DB_PORT}`);
 });
