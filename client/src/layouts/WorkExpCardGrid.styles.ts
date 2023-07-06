@@ -1,8 +1,10 @@
 export const cardDiv = {
     maxWidth: 250,
+    height: 250,
     margin: { xs: '20px auto', lg: '20px' },
     boxShadow: '0px 2px 10px 1px rgba(0,0,0,0.2)',
-    animation: 'fadeIn 2s'
+    animation: 'fadeIn 2s',
+    transition: 'transform 0.3s ease',
 }
 
 export const cardBox = {

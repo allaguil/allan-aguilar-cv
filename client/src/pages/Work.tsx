@@ -16,7 +16,7 @@ export const Work: FC<Props> = ({ navState, setNavState }) => {
 
   return (
     <>
-      <WorkExp navState={navState} setNavState={setNavState} setCardSelected={setCardSelected} />
+      <WorkExp navState={navState} setNavState={setNavState} setCardSelected={setCardSelected} cardSelected={cardSelected} />
       {cardSelected !== '' && <WorkPanel navState={navState} cardSelected={cardSelected} />}
     </>
   );

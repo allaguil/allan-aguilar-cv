@@ -11,6 +11,8 @@ interface CardData {
   technologies: string;
   urlValue: string;
   url: string;
+  year: string;
+  order: number;
 }
 
 export const useFetchWorkData = () => {
@@ -18,16 +20,17 @@ export const useFetchWorkData = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+
       try {
         const url = `http://${DB_HOST}:${DB_PORT}`;
         const response = await fetch(`${url}/api/data`);
         const result = await response.json();
-
-        console.log(result);
         setData(result);
+
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching data in the Front End:", error);
       }
+
     };
 
     fetchData();

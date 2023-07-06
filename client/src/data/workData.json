@@ -2,33 +2,41 @@
     {
         "company": "Intel Corporation",
         "role": "Web Analytics Analyst",
+        "year": "(June 2019 - March 2021)",
         "description": "Responsible for creating and maintaining the Adobe Analytics Tracking implementation to ensure data is being collected properly for Business Data Analysis. Also responsible for creating new Adobe Target Recommendation Activities to display new Product Components to the users based on their afinities, this implementation requires technical knowledge in Adobe Target to develop the Design implementation using Velocity Language and also to create new Criterias to display the right Products based on the Criteria Sequence data ingested in the Target Catalog using Adobe Target Feeds.",
-        "technologies": "AEM, Adobe Target, Adobe Analytics, Tealium, JS, jQuery, CSS, GitLab, Jira, Scrum and Agile",
+        "technologies": "AEM, Adobe Target, Adobe Analytics, Tealium, JS, jQuery, CSS, Bootstrap, GitLab, Jira, Scrum and Agile",
         "urlValue": "www.intel.com",
-        "url": "https://www.intel.com/"
+        "url": "https://www.intel.com/",
+        "order": 1
     },
     {
         "company": "Citi Bank",
         "role": "Adobe Target Developer",
+        "year": "(September 2016 - May 2019)",
         "description": "Responsible of developing AB Testing and Experience Targeting (XT) Experiences in Adobe Target including the Analytics Tracking implementation to ensure data is being collected properly for Business Data Analysis. This job required JavaScript knowledge to manipulate the DOM, handle events, debugging, work with Arrays and Objects methods, handle Chrome Dev Tools well and work with the browser memories(LS,SS,cookies), all of these using modern JS6 syntax.",
-        "technologies": "Adobe Target, Adobe Analytics, HTML, CSS, JS, jQuery, Jira",
+        "technologies": "AEM, Adobe Target, Adobe Analytics, Ensighten, ObservePoint, HTML, CSS, Bootstrap, JS, jQuery, Jira",
         "urlValue": "www.citi.com",
-        "url": "https://www.citi.com/"
+        "url": "https://www.citi.com/",
+        "order": 2
     },
     {
         "company": "Western Union",
         "role": "Web Content Editor",
-        "description": "In charge of authoring the organization's content, images, media, Tagging, SEO good practices in AEM (CMS) using the Classic UI.",
+        "year": "(March 2015 - September 2016)",
+        "description": "In charge of authoring the organization's content through a CMS, also handling the Tagging implementation, following SEO good practices and uploading all the images and media files to the DAM in Adobe Experience Manager (AEM) using the Classic UI.",
         "technologies": "AEM, HTML, CSS, Jira",
         "urlValue": "www.westernunion.com",
-        "url": "https://www.westernunion.com/"
+        "url": "https://www.westernunion.com/",
+        "order": 3
     },
     {
         "company": "Cisco Systems",
         "role": "Web Designer",
-        "description": "Responsible of the Web Design to different internal and external Cisco Communities, handling design softwares such as Photoshop and Illustrator to provide the nice look and feel Design.",
+        "year": "(November 2012 - March 2015)",
+        "description": "I started my Web career as a Web Designer, I was responsible of the web design to different internal and external Cisco Communities, handling design softwares such as Photoshop and Illustrator to provide the nice look and feel Design.",
         "technologies": "HTML, Photoshop, Illustrator",
         "urlValue": "Behance Profile",
-        "url": "https://www.behance.net/allaguil"
+        "url": "https://www.behance.net/allaguil",
+        "order": 4
     }
 ]

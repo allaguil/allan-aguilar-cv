@@ -6,13 +6,13 @@ interface Props {
     navState: string,
     setNavState: React.Dispatch<React.SetStateAction<string>>,
     setCardSelected: React.Dispatch<React.SetStateAction<string>>,
+    cardSelected: string,
   }
 
-export const WorkExp: FC<Props> = ({ navState, setNavState, setCardSelected }) => {
+export const WorkExp: FC<Props> = ({ navState, setNavState, setCardSelected, cardSelected }) => {
     return (
         <>
             <Container>
-
                 <Typography variant="h2" mb={3} mt={4} sx={{
                     fontFamily: 'Pangolin',
                     fontSize: '38px',
@@ -22,7 +22,7 @@ export const WorkExp: FC<Props> = ({ navState, setNavState, setCardSelected }) =
                 }}>Work Experience</Typography>
 
                 <Container sx={{ display:'flex', marginBottom: '40px', flexWrap: 'wrap', justifyContent:'space-between', width: {sm:'83%', md:'100%'} }}>
-                    <WorkExpCardGrid navState={navState} setNavState={setNavState} setCardSelected={setCardSelected} />
+                    <WorkExpCardGrid navState={navState} setNavState={setNavState} setCardSelected={setCardSelected} cardSelected={cardSelected} />
                 </Container>
                 
             </Container>

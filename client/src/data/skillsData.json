@@ -1,0 +1,65 @@
+[
+    {
+        "skill": "JavaScript",
+        "level": "Expert Level",
+        "percentage": 90,
+        "description": [ "Fundamentals", "DOM Manipulation", "Handling Chrome Dev Tools: Debugging, Running line breaks with breakpoints, Run overrides on the fly, Run snippets, Work with the console, Work with Browser Memories (LS, SS, Cookies)", "Modern Syntax ES6: Arrow functions, Template Strings, Ternary Operator, Objects destructuring, Spread Operator, Modules imports, Fetch API", "DOM Events", "Array/Object Methods", "Bundlers: Webpack/Vite", "Callbacks", "Promises", "HTTP requests", "Advanced concepts: How the JS engine works (Chromium V8), Call Stack, Memory Heap, Web API, Callback Queue, Garbage Collector, Closures, Hoisting, Prototype, Execution Context, Modules, Synchronous and Asynchronous execution" ],
+        "order": 1
+    },
+    {
+        "skill": "AEM",
+        "level": "Skilled Level",
+        "percentage": 80,
+        "description": [ "" ,"" ,"" ,"" ],
+        "order": 2
+    },
+    {
+        "skill": "React JS",
+        "level": "Skilled Level",
+        "percentage": 80,
+        "description": [ "Framework fundamentals for SPA development: Virtual DOM, JSX, fragments, Class and Functional Components, imports and exports, Hooks (useState, useEffect, useContext), props, proptypes, npm packages installation", "Handle the CSS styles with frameworks (Material UI, Chakra UI, Tailwind UI, Bootstrap)", "React Router", "Redux" ],
+        "order": 3
+    },
+    {
+        "skill": "Vue JS",
+        "level": "Learner Level",
+        "percentage": 60,
+        "description": [ "" ,"" ,"" ,"" ],
+        "order": 4
+    },
+    {
+        "skill": "TypeScript",
+        "level": "Learner Level",
+        "percentage": 60,
+        "description": [ "" ,"" ,"" ,"" ],
+        "order": 5
+    },
+    {
+        "skill": "Node JS",
+        "level": "Learner Level",
+        "percentage": 40,
+        "description": [ "" ,"" ,"" ,"" ],
+        "order": 6
+    },
+    {
+        "skill": "CSS",
+        "level": "Expert Level",
+        "percentage": 90,
+        "description": [ "" ,"" ,"" ,"" ],
+        "order": 7
+    },
+    {
+        "skill": "Git",
+        "level": "Skilled Level",
+        "percentage": 85,
+        "description": [ "" ,"" ,"" ,"" ],
+        "order": 8
+    },
+    {
+        "skill": "jQuery",
+        "level": "Expert Level",
+        "percentage": 90,
+        "description": [ "" ,"" ,"" ,"" ],
+        "order": 9
+    }
+]
