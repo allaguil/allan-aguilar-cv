@@ -1,6 +1,7 @@
+import { SkillSet } from "../shared/SkillSet"
 
 export const Skills = () => {
   return (
-    <div>Skills</div>
+    <SkillSet />
   )
 }

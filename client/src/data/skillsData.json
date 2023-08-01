@@ -3,63 +3,84 @@
         "skill": "JavaScript",
         "level": "Expert Level",
         "percentage": 90,
-        "description": [ "Fundamentals", "DOM Manipulation", "Handling Chrome Dev Tools: Debugging, Running line breaks with breakpoints, Run overrides on the fly, Run snippets, Work with the console, Work with Browser Memories (LS, SS, Cookies)", "Modern Syntax ES6: Arrow functions, Template Strings, Ternary Operator, Objects destructuring, Spread Operator, Modules imports, Fetch API", "DOM Events", "Array/Object Methods", "Bundlers: Webpack/Vite", "Callbacks", "Promises", "HTTP requests", "Advanced concepts: How the JS engine works (Chromium V8), Call Stack, Memory Heap, Web API, Callback Queue, Garbage Collector, Closures, Hoisting, Prototype, Execution Context, Modules, Synchronous and Asynchronous execution" ],
+        "description": [ "Fundamentals: Primitives, Variables (var, let, const), Timeout & Interval, Operators, Classes", "DOM Manipulation", "Handling Chrome Dev Tools: Debugging, Running line breaks with breakpoints, Run overrides on the fly, Run snippets, Work with the console, Work with Browser Memories (LS, SS, Cookies)", "Modern Syntax ES6: Arrow functions, Template Strings, Ternary Operator, Objects destructuring, Spread Operator, Modules imports, Fetch API", "DOM Event Listeners", "Array/Object Methods", "Bundlers: Webpack/Vite", "Callbacks", "Promises", "HTTP requests", "Advanced concepts: How the JS engine works (Chromium V8), Call Stack, Memory Heap, Web API, Callback Queue, Garbage Collector, Closures, Scopes & Hoisting, Prototype, Execution Context, Modules, Synchronous and Asynchronous execution" ],
         "order": 1
+    },
+    {
+        "skill": "React JS",
+        "level": "Skilled Level",
+        "percentage": 85,
+        "description": [ "Framework fundamentals for SPA development: Virtual DOM, JSX, fragments, Class and Functional Components, imports and exports, Hooks (useState, useEffect, useContext), props, proptypes, npm packages installation", "Handle the CSS styles with frameworks (Material UI, Chakra UI, Tailwind UI, Bootstrap)", "React Router", "Redux" ],
+        "order": 2
     },
     {
         "skill": "AEM",
         "level": "Skilled Level",
         "percentage": 80,
-        "description": [ "" ,"" ,"" ,"" ],
-        "order": 2
-    },
-    {
-        "skill": "React JS",
-        "level": "Skilled Level",
-        "percentage": 80,
-        "description": [ "Framework fundamentals for SPA development: Virtual DOM, JSX, fragments, Class and Functional Components, imports and exports, Hooks (useState, useEffect, useContext), props, proptypes, npm packages installation", "Handle the CSS styles with frameworks (Material UI, Chakra UI, Tailwind UI, Bootstrap)", "React Router", "Redux" ],
+        "description": [ "Fundamentals: Content Repository, Foundation Components and Core Components, Editable Templates and Static Templates, Content Authoring, Content Workflow, Digital Asset Management (DAM)" ,"Classic UI:" ,"Touch UI:", "AEM Infrastructure: Pros and Cons of the two ways of deploying AEM, with Standalone Server (integrated Jetty Web Server) and Web Application Deployment (within a third-party application server)", "Apache Sling Framework for RESTful Web Applications based on extensible Content Tree like Java Content Repository (JCR). In AEM, Sling uses a JCR to fetch content from the CRX Content Repository and provide that content to the users."],
         "order": 3
     },
     {
         "skill": "Vue JS",
         "level": "Learner Level",
         "percentage": 60,
-        "description": [ "" ,"" ,"" ,"" ],
+        "description": [ "Test1" ,"Test2" ,"Test3" ,"Test4" ],
         "order": 4
     },
     {
         "skill": "TypeScript",
         "level": "Learner Level",
         "percentage": 60,
-        "description": [ "" ,"" ,"" ,"" ],
+        "description": [ "Test1" ,"Test2" ,"Test3" ,"Test4" ],
         "order": 5
     },
     {
         "skill": "Node JS",
         "level": "Learner Level",
         "percentage": 40,
-        "description": [ "" ,"" ,"" ,"" ],
+        "description": [ "Fundamentals" ,"Webserver" ,"REST Server: HTTP request (GET, PUT, POST, DELETE, PATCH)", "Socket Server:", "Express", "Authentication JWT", "" ],
         "order": 6
     },
     {
         "skill": "CSS",
         "level": "Expert Level",
         "percentage": 90,
-        "description": [ "" ,"" ,"" ,"" ],
+        "description": [ "Fundamentals: Properties, Id and Class selectors, Layout and positioning, Box Model, Pseudo: selectors & elements, inheritance, overflow, float", "Responsive Design: Media Queries, Fluid layouts, Flexbox, Grid Layouts, CSS units, Responsive Images","Sass: Sass Mixins", "CSS Animations: Keyframes", "CSS styles with frameworks (Material UI, Chakra UI, Tailwind UI, Bootstrap)" ],
         "order": 7
     },
     {
         "skill": "Git",
         "level": "Skilled Level",
         "percentage": 85,
-        "description": [ "" ,"" ,"" ,"" ],
+        "description": [ "GitHub, GitLab" ,"Branching: Merge, Rebase, Workflow" ,"Clone" ,"Commit", "Pull & Fetch", "Push", "Stash", "Reset", "Restore", "Switch & Checkout", "Revert", "Tags" ],
         "order": 8
+    },
+    {
+        "skill": "React Native",
+        "level": "Learner Level",
+        "percentage": 65,
+        "description": [ "Test1" ,"Test2" ,"Test3" ,"Test4" ],
+        "order": 9
     },
     {
         "skill": "jQuery",
         "level": "Expert Level",
         "percentage": 90,
-        "description": [ "" ,"" ,"" ,"" ],
-        "order": 9
+        "description": [ "Fundamentals: DOM Manipulation, Events, jQuery Methods" ,"AJAX" ,"Animations" ,"Plugins" ],
+        "order": 10
+    },
+    {
+        "skill": "Angular",
+        "level": "Learner Level",
+        "percentage": 25,
+        "description": [ "Test1" ,"Test2" ,"Test3" ,"Test4" ],
+        "order": 11
+    },
+    {
+        "skill": "HTML",
+        "level": "Expert Level",
+        "percentage": 90,
+        "description": [ "Fundamentals: DOM Tree, Block and Inline Elements, Anchors and Navigation, Tags & Attributes, Lists, Forms & Input types, imports, images, events, headings, tables" ,"Meta Tags" ,"SEO" ,"iFrame", "Responsive Images", "IndexedDB", "Workers: web worker, service worker, shared worker" ],
+        "order": 12
     }
 ]

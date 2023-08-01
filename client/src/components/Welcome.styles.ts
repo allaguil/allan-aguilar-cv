@@ -1,7 +1,7 @@
 export const cursiveTypo = {
     // textAlign: 'center',
-    fontFamily: 'Satisfy',
-    fontSize: '38px',
+    fontFamily: 'Pangolin',
+    fontSize: '42px',
     padding: '0 20px',
     // transform: 'rotate(-2deg)',
 }

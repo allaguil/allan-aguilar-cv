@@ -9,6 +9,7 @@ import { Work } from './pages/Work';
 import './index.css' // Global CSS Styles
 import { useState } from 'react';
 import { Banner } from './components/Banner';
+import { NavProvider } from './context/NavProvider';
 
 export const CvApp: FC = () => {
 
@@ -16,7 +17,7 @@ export const CvApp: FC = () => {
   const [navState, setNavState] = useState<string>(currentPath); // Which Menu anchor was clicked, ex: /work
 
   return (
-    <>
+    <NavProvider>
       <NavBar setNavState={ setNavState } />
       <Banner navState={navState} />
       
@@ -31,7 +32,7 @@ export const CvApp: FC = () => {
         {/* <Route path='/*' element={<Home setNavState={setNavState} />} /> */}
         {/* Para enviar al usuario al HomePage si intenta ingresar a una ruta que NO existe! */}
       </Routes>
-    </>
+    </NavProvider>
   )
 }
 
