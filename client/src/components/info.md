@@ -8,7 +8,7 @@ Esta carpeta contiene los Componentes Padres de la aplicación
 - In JSX return will render the "BannerGrid" Component.
 
 ## NavBar.tsx
-
+- This is a Component from Material UI.
 
 
 
