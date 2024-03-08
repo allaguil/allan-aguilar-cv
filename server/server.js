@@ -34,8 +34,8 @@ app.get("/users", (req, res) => {
 app.get('/api/data', async (req, res) => {
   try {
     await client.connect(); // This line awaits the connection to the database, indicating that the code execution will pause until the connection is established.
-    const db = client.db(DB_NAME); // retrieves a reference to the DataBase
-    const collection = db.collection(DB_COLLECTION); // retrieves a reference to the Collection
+    const db = client.db(DB_NAME); // retrieves a reference to the DataBase "OnlineResume"
+    const collection = db.collection(DB_COLLECTION); // retrieves a reference to the Collection "WorkData"
 
     // Find all documents in the collection and sends the documents as a JSON response.
     const documents = await collection.find({}).sort({ order: 1 }).toArray();
