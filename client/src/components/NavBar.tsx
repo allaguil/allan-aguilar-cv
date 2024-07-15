@@ -22,7 +22,7 @@ interface Props {
 }
 
 // In Ts, to define an Array of only 'strings', we use :string[]
-const pages: string[] = ['work', 'skills', 'projects'];
+const pages: string[] = ['work', 'projects', 'skills'];
 
 export const NavBar: React.FC<Props> = ({ setNavState }) => {
 
@@ -30,7 +30,7 @@ export const NavBar: React.FC<Props> = ({ setNavState }) => {
     const handleNavClick = ({ target }: any) => {
         const hrefValue = target.attributes.href.value;
         setNavState(hrefValue);
-        console.log(hrefValue)
+        console.log(hrefValue);
     }
 
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
