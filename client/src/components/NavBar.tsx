@@ -15,6 +15,8 @@ import CodeIcon from '@mui/icons-material/Code';
 import CodeOffIcon from '@mui/icons-material/CodeOff';
 
 import { appBar, logoTypoDesk, codeIconDesk, hireMeLinkDesk, codeOffIconDesk } from './NavBar.styles';
+import { useNavContext } from '../context/NavContext';
+import { FC } from 'react';
 
 // We always use "React.Dispatch<React.SetStateAction<string>>" when using the 'useState' hook when used with a 'string' initial value.
 interface Props {
@@ -22,9 +24,10 @@ interface Props {
 }
 
 // In Ts, to define an Array of only 'strings', we use :string[]
-const pages: string[] = ['work', 'projects', 'skills'];
+const pages: string[] = ['work', 'skills', 'projects'];
 
-export const NavBar: React.FC<Props> = ({ setNavState }) => {
+export const NavBar: FC = () => {
+    const { setNavState } = useNavContext();
 
     // function to identify page URL path and set it to 'useState' hook for Nav Tab
     const handleNavClick = ({ target }: any) => {

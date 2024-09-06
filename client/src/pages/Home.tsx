@@ -5,20 +5,21 @@ import { WorkExp } from '../shared/WorkExp';
 import React, { FC, SetStateAction, useState } from 'react';
 import { SkillSet } from '../shared/SkillSet';
 import { ProjectsList } from '../shared/ProjectsList';
+import { useNavContext } from '../context/NavContext';
 
 interface Props {
   setNavState: React.Dispatch<React.SetStateAction<string>>;
 }
 
-React
-export const Home: FC<Props> = ({ setNavState }) => {
+export const Home: FC = () => {
+  const { setNavState } = useNavContext();
 
   const [cardSelected, setCardSelected] = useState('');
 
   return (
     <>
-    <Welcome />
-    <WorkExp setNavState={setNavState} navState={''} cardSelected={cardSelected} setCardSelected={setCardSelected} />
+    {/* <Welcome /> */}
+    <WorkExp cardSelected={cardSelected} setCardSelected={setCardSelected} />
     <SkillSet />
     <ProjectsList />
     </>

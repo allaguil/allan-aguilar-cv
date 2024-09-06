@@ -1,11 +1,26 @@
-import { createContext } from "react";
+import React, { createContext, useContext, useState, FC, ReactNode } from 'react';
 
-interface NavContextValue {
-    hola: string;
-    navTest: {
-      tab: number;
-      name: string;
-    };
+interface NavContextProps {
+  navState: string;
+  setNavState: (state: string) => void;
+}
+
+const NavContext = createContext<NavContextProps | undefined>(undefined);
+
+export const NavProvider: FC<{ children: ReactNode }> = ({ children }) => {
+  const [navState, setNavState] = useState<string>(window.location.pathname);
+
+  return (
+    <NavContext.Provider value={{ navState, setNavState }}>
+      {children}
+    </NavContext.Provider>
+  );
+};
+
+export const useNavContext = (): NavContextProps => {
+  const context = useContext(NavContext);
+  if (!context) {
+    throw new Error('useNavContext must be used within a NavProvider');
   }
-
-export const NavContext = createContext<NavContextValue | null>(null);
+  return context;
+};
