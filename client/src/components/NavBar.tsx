@@ -18,11 +18,6 @@ import { appBar, logoTypoDesk, codeIconDesk, hireMeLinkDesk, codeOffIconDesk } f
 import { useNavContext } from '../context/NavContext';
 import { FC } from 'react';
 
-// We always use "React.Dispatch<React.SetStateAction<string>>" when using the 'useState' hook when used with a 'string' initial value.
-interface Props {
-    setNavState: React.Dispatch<React.SetStateAction<string>>;
-}
-
 // In Ts, to define an Array of only 'strings', we use :string[]
 const pages: string[] = ['work', 'skills', 'projects'];
 
