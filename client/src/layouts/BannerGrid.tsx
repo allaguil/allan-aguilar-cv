@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Box, Container, Typography, useMediaQuery } from '@mui/material';
 
 import react from '../assets/react.svg';

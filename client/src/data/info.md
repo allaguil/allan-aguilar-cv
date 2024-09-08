@@ -1,5 +1,5 @@
 # Información
-Esta carpeta contiene la data quemada de la aplicacion
+Esta carpeta contiene la data quemada de la aplicacion (SVG logos, Imgs).
 
 ## workData.json
 Este es el JSON que subí en mi collection de MongoDB
