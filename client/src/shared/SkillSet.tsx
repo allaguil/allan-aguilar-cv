@@ -1,10 +1,10 @@
-import { Box, Button, CardMedia, Container, LinearProgress, Typography } from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
 
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { SkillInfo } from '../components/SkillInfo';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export const SkillSet = () => {
 

@@ -5,11 +5,9 @@ import { useFetchWorkData } from "../hooks/useFetchWorkData"; // custom hook
 
 import { workPanelBox, cardContainer, cardBox, cardHeading, cardDataTxt, cardDataSpan, cardYear } from './WorkPanelDesk.styles';
 
-
 interface Props {
     cardSelected: string;
 }
-
 
 export const WorkPanelDesk: FC<Props> = ({ cardSelected }) => {
 

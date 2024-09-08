@@ -7,6 +7,7 @@ interface NavContextProps {
 
 const NavContext = createContext<NavContextProps | undefined>(undefined);
 
+// Functional Component
 export const NavProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [navState, setNavState] = useState<string>(window.location.pathname);
 
@@ -17,6 +18,7 @@ export const NavProvider: FC<{ children: ReactNode }> = ({ children }) => {
   );
 };
 
+// Custom Hook
 export const useNavContext = (): NavContextProps => {
   const context = useContext(NavContext);
   if (!context) {

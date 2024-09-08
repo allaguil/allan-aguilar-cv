@@ -1,8 +1,16 @@
 
 ## Que es un Contexto?
 - Es un Contenedor de información que está a un nivel superior que permite a sus Componentes hijos acceder a la información.
-- Un Contexto es un HOC, viene siendo un Componente más que internamente tiene otros Componentes hijos.
-- Necesitamos de un Contexto para poder compartir información entre Componentes.
+- Necesitamos de un Contexto para poder compartir información entre Componentes de una manera Global, evitando la necesidad de pasar datos manualmente a través de componentes por medio de props.
+
+## useContext Hook
+- Se usa para manejar el estado global de la aplicación.
+- useContext( ) = Se utiliza en conjunto con createContext( ) y el .Provider
+- createContext( ) = Se usa para crear un contexto que contiene el estado o valor que quieres compartir entre componentes sin tener que pasar props manualmente.
+- Provider( ) = El componente Provider se utiliza para envolver los componentes que necesitan acceder al contexto. Le pasas un value={ } al Provider, y ese value={ } estará disponible para todos los componentes dentro de ese árbol que utilicen useContext.
+
+### Que significa la propiedad {children} dentro de un Functional Component que actúa como Provider ?
+- La propiedad {children} son todos esos componentes hijos que están envueltos dentro del Provider cuando lo usas en tu JSX.
 
 ## Pasos para crear el NavContext
 
