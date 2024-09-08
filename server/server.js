@@ -24,6 +24,8 @@ const client = new MongoClient(DB_URI);
 
 // Route Example
 app.get("/users", (req, res) => {
+  const {DB_HOST} = process.env
+  console.log(DB_HOST)
   res.send("This will be printed on the page!!");
 })
 

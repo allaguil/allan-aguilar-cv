@@ -19,7 +19,7 @@ export const leftDiv = {
     paddingTop: { sm: '40px' },
 }
 
-// Online Resume
+// ONLINE RESUME
 export const bannerOnlineResumeHTML = {
     marginLeft: '16px',
     fontFamily: 'Pangolin',
@@ -40,21 +40,22 @@ export const bannerTxtHTML = {
     paddingTop: { sm: '40px' },
 }
 
-// Banner Name 
+// ALLAN AGUILAR 
 export const bannerNameHTML = {
     fontFamily: 'Pangolin',
-    color: { xs: '#76ffff' },
+    color: { xs: '#fff' },
     fontSize: { xs: '32px', md: '42px' },
     textShadow: '2px 2px 4px #000000',
     transitionDelay: '9s',
     animation: 'fadeIn 3s',
 }
 
-// Banner Web Dev
+// SOFTWARE DEVELOPER
 export const bannerWebDevHTML = {
     fontFamily: 'Pangolin',
-    color: { xs: '#F5E71F' },
-    fontSize: { xs: '30px', md: '40px' },
+    // color: { xs: '#F5E71F' },
+    color: { xs: '#7EC14A' },
+    fontSize: { xs: '30px', md: '30px' },
     textShadow: '2px 2px 4px #000000',
     transitionDelay: '9s',
     animation: 'fadeIn 3s',
@@ -68,7 +69,7 @@ export const BannerLogos = styled('img')(({ theme }) => ({
     filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5))',
 
     [theme.breakpoints.up('md')]: {
-        width: "80px",
+        width: "75px",
     },
 }));
 

@@ -2,8 +2,9 @@ import { FC, useEffect, useState } from 'react';
 import { Box, Container, Typography, useMediaQuery } from '@mui/material';
 
 import react from '../assets/react.svg';
-import vue from '../assets/vue.svg';
-import angular from '../assets/angular.svg';
+import ts from '../assets/ts.svg';
+import nodejs from '../assets/nodejs.svg';
+import mongodb from '../assets/mongodb.svg';
 import { bannerOnlineResumeHTML, bannerTxtHTML, bannerNameHTML, bannerWebDevHTML, BannerLogos, contentDiv, leftDiv } from './BannerGrid.styles';
 
 type BannerProps = {
@@ -15,7 +16,7 @@ export const BannerGrid: FC<BannerProps> = ({ bannerState }) => {
     const isSmallScreen = useMediaQuery('(max-width:600px)');
     const onlineResume: string = 'ONLINE RESUME';
     const name: string = 'ALLAN AGUILAR';
-    const webDev: string = 'WEB DEVELOPER';
+    const webDev: string = 'SOFTWARE DEVELOPER';
 
     const [showComponent, setShowComponent] = useState(false);
 
@@ -46,10 +47,9 @@ export const BannerGrid: FC<BannerProps> = ({ bannerState }) => {
                                     </Typography>
                                 </Box>
                             )}
-                            <Box mt={1} sx={{ display: 'flex' }}>
+                            <Box mt={1} ml={12} sx={{ display: 'flex' }}>
                                 <BannerLogos src={react} />
-                                <BannerLogos src={vue} />
-                                <BannerLogos src={angular} />
+                                <BannerLogos src={ts} />
                             </Box>
                         </Box>
                         {!isSmallScreen && bannerState && (
@@ -60,6 +60,10 @@ export const BannerGrid: FC<BannerProps> = ({ bannerState }) => {
                                 <Typography variant="h3" sx={bannerWebDevHTML}>
                                     {webDev}
                                 </Typography>
+                                <Box mt={1} mr={4} sx={{ display: 'flex' }}>
+                                    <BannerLogos src={nodejs} />
+                                    <BannerLogos src={mongodb} />
+                                </Box>
                             </Box>
                         )}
                     </Container>

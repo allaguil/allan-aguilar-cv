@@ -5,6 +5,7 @@ export const cardDiv = {
     boxShadow: '0px 2px 10px 1px rgba(0,0,0,0.2)',
     animation: 'fadeIn 2s',
     transition: 'transform 0.3s ease',
+    textAlign: 'center',
 }
 
 export const cardBox = {

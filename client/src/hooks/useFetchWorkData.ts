@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { DB_HOST, DB_PORT } from '../config';
 

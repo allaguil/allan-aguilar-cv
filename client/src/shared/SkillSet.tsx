@@ -23,7 +23,7 @@ export const SkillSet = () => {
                 },
             }}>Skills</Typography>
 
-            <Container sx={{ display: 'flex', width: '100%', borderRadius: '4px', boxShadow: '0px 2px 10px 1px rgba(0,0,0,0.2)' }}>
+            <Container sx={{ display: 'flex', width: '100%', borderRadius: '4px', boxShadow: '0px 2px 10px 1px rgba(0,0,0,0.8)' }}>
 
                 <SkillInfo currentSkill={currentSkill} />
                 {/* Arrows */}
