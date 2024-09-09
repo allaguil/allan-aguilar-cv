@@ -22,7 +22,8 @@
 - "DB_URI" es la variable de entorno que contiene la URL de conexión a la base de datos.
 - const client = new MongoClient(DB_URI);
 
-### Crear una nueva instancia de MongoDB.
+### Crear Endpoints.
+
 
 
 
