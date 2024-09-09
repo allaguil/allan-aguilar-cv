@@ -4,7 +4,8 @@
 }
 
 .nav-link:hover {
-  color: #F5E71F !important;
+  /* color: #F5E71F !important; */
+  color: #7EC14A !important;
 }
 
 :root {

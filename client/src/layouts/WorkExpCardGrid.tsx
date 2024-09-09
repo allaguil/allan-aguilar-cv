@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { Box } from '@mui/material';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography, Box } from '@mui/material';
 import { workImgs } from '../data/workImgs';
-import { Link } from 'react-router-dom';
 import { cardDiv, cardBox, logo, pangolinFont } from './WorkExpCardGrid.styles';
-import { useFetchWorkData } from '../hooks/useFetchWorkData'; // custom hook
+import { useFetchWorkData } from '../hooks/useFetchWorkData';
 import { useNavContext } from '../context/NavContext';
+import { Link } from 'react-router-dom';
+
 
 interface DataObject {
     company: string;

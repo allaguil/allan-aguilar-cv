@@ -1,32 +1,23 @@
-// import necessary modules 
-import express from 'express'; // This is the Express.js module used to create the server.
-import { MongoClient } from 'mongodb'; // This is the MongoDB module used to connect to the database.
-import cors from 'cors'; // This is the CORS (Cross-Origin Resource Sharing) module used to enable cross-origin requests.
+import express from 'express';
+import { MongoClient } from 'mongodb';
+import cors from 'cors';
+import { config } from 'dotenv';
+config();
 
-import { config } from 'dotenv'; // dotenv is a module used for loading 'environment variables' from a .env file into process.env.
-config(); // The config function is used to load the environment variables from the .env file.
+const { DB_PORT, DB_URI, DB_NAME, DB_COLLECTION } = process.env;
 
-const { DB_HOST, DB_PORT, API_KEY, DB_URI, DB_NAME, DB_COLLECTION } = process.env; // Destructure these 'environment variables' needed for connecting to the MongoDB database.
-
-
-// Create an Express application
-// The express function is called to create an instance of the Express Application, which will be used to define routes and handle HTTP requests.
 const app = express();
 
-
-// Enable CORS for all routes
 app.use(cors());
 
-// Create a new instance of the MongoDB client.
-// The MongoClient is instantiated with the DB_URI variable, which specifies the connection URL for the MongoDB database.
 const client = new MongoClient(DB_URI);
 
 
-// Route Example
-app.get("/users", (req, res) => {
-  const {DB_HOST} = process.env
-  console.log(DB_HOST)
-  res.send("This will be printed on the page!!");
+// Endpoint Route Example for Testing
+app.post("/users", (req, res) => {
+  const {DB_PORT} = process.env
+  console.log(DB_PORT, "Testing POST")
+  res.send("DATA RECEIVED!!");
 })
 
 
