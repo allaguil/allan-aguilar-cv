@@ -23,6 +23,12 @@
 - const client = new MongoClient(DB_URI);
 
 ### Crear Endpoints.
+- app.get() = Es un método en Express.js que se utiliza para definir un Endpoint HTTP GET en mi aplicación.
+- Este método toma dos argumentos:
+1. El path ('/api/data') = Esta es la URL/RUTA especificada para obtener los datos de la solicitud.
+2. Callback/Handler = Esta función se ejecuta cuando el servidor recibe una solicitud HTTP en la ruta especificada.
+- (req, res) = (Request): Representa la solicitud HTTP del cliente.
+- (req, res) = (Response): Representa la respuesta HTTP que el servidor envía al cliente.
 
 
 

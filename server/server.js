@@ -12,15 +12,6 @@ app.use(cors());
 
 const client = new MongoClient(DB_URI);
 
-
-// Endpoint Route Example for Testing
-app.post("/users", (req, res) => {
-  const {DB_PORT} = process.env
-  console.log(DB_PORT, "Testing POST")
-  res.send("DATA RECEIVED!!");
-})
-
-
 // Define the route handler to fetch data from the database.
 // The app.get() defines a route for handling GET requests to '/api/data'.
 // Inside the route handler, the code connects to the MongoDB database, fetches all documents from the specified collection, and sends the documents as a JSON response.
@@ -42,6 +33,17 @@ app.get('/api/data', async (req, res) => {
     await client.close();
   }
 });
+
+
+// Endpoint Example for Testing
+app.post("/users", (req, res) => {
+  const {DB_PORT} = process.env
+  console.log(DB_PORT, "Testing POST")
+  res.send("DATA RECEIVED!!");
+})
+
+
+
 
 // Start the server and listen on the specified port
 // The app.listen() starts the server and listens on the specified DB_PORT.

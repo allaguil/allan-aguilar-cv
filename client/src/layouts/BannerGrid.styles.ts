@@ -11,6 +11,7 @@ export const contentDiv = {
     width: '100%',
     paddingTop: { xs: '40px', sm: '40px' },
     justifyContent: { sm: 'center' },
+    maxWidth: {xl:'1550px'},
 }
 
 // Left Div
