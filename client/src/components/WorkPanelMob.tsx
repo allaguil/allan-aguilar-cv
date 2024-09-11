@@ -2,13 +2,10 @@ import React, { useState } from 'react';
 import { FC } from "react";
 import { Modal, Box, Container, Typography } from '@mui/material';
 import { useFetchWorkData } from '../hooks/useFetchWorkData';
+import { useCardContext } from '../context/CardContext';
 
-interface Props {
-    cardSelected: string;
-}
-
-export const WorkPanelMob: FC<Props> = ({ cardSelected }) => {
-
+export const WorkPanelMob: FC = () => {
+    const { cardSelected } = useCardContext();
     const data = useFetchWorkData();
 
     const [isModalOpen, setModalOpen] = useState(false);

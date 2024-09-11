@@ -2,15 +2,16 @@ import { FC, useState } from 'react';
 import { WorkExp } from '../shared/WorkExp';
 import { WorkPanel } from '../components/WorkPanel';
 import { useNavContext } from '../context/NavContext';
+import { useCardContext } from '../context/CardContext';
 
 export const Work: FC = () => {
   const { navState } = useNavContext();
-  const [cardSelected, setCardSelected] = useState('');
+  const { cardSelected } = useCardContext();
 
   return (
     <>
-      <WorkExp setCardSelected={ setCardSelected } cardSelected={ cardSelected } />
-      {cardSelected !== '' && <WorkPanel navState={ navState } cardSelected={ cardSelected } />}
+      <WorkExp />
+      {cardSelected !== '' && <WorkPanel />}
     </>
   );
 };

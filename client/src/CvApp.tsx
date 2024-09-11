@@ -9,10 +9,12 @@ import { Work } from './pages/Work';
 import './index.css' // Global CSS Styles
 import { Banner } from './components/Banner';
 import { NavProvider } from './context/NavContext';
+import { CardProvider } from './context/CardContext';
 
 export const CvApp: FC = () => {
   return (
     <NavProvider>
+      <CardProvider>
         <NavBar />
         <Banner />
         <Routes>
@@ -22,6 +24,7 @@ export const CvApp: FC = () => {
           <Route path='/projects' element={<Projects />} />
           <Route path='/*' element={<Navigate to='/' />} />
         </Routes>
+      </CardProvider>
     </NavProvider>
   )
 }

@@ -1,16 +1,8 @@
 import { Container, Typography } from '@mui/material';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { WorkExpCardGrid } from '../layouts/WorkExpCardGrid';
-import { useNavContext } from '../context/NavContext';
 
-interface Props {
-    setCardSelected: React.Dispatch<React.SetStateAction<string>>;
-    cardSelected: string;
-}
-
-export const WorkExp: FC<Props> = ({ setCardSelected, cardSelected }) => {
-    const { navState, setNavState } = useNavContext();
-
+export const WorkExp: FC = () => {
     return (
         <>
             <Container>
@@ -25,10 +17,7 @@ export const WorkExp: FC<Props> = ({ setCardSelected, cardSelected }) => {
                 }}>Work Experience</Typography>
 
                 <Container sx={{ display: 'flex', marginBottom: '40px', flexWrap: 'wrap', justifyContent: 'space-between', width: { sm: '83%', md: '100%' } }}>
-                    <WorkExpCardGrid
-                        setCardSelected={setCardSelected}
-                        cardSelected={cardSelected}
-                    />
+                    <WorkExpCardGrid />
                 </Container>
 
             </Container>

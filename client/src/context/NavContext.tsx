@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, FC, ReactNode } from 'react';
+import { createContext, useContext, useState, FC, ReactNode } from 'react';
 
 interface NavContextProps {
   navState: string;
@@ -6,6 +6,15 @@ interface NavContextProps {
 }
 
 const NavContext = createContext<NavContextProps | undefined>(undefined);
+
+// Custom Hook
+export const useNavContext = () => {
+  const context = useContext(NavContext);
+  if (!context) {
+    throw new Error('useNavContext must be used within a NavProvider');
+  }
+  return context;
+};
 
 // Functional Component
 export const NavProvider: FC<{ children: ReactNode }> = ({ children }) => {
@@ -16,13 +25,4 @@ export const NavProvider: FC<{ children: ReactNode }> = ({ children }) => {
       {children}
     </NavContext.Provider>
   );
-};
-
-// Custom Hook
-export const useNavContext = (): NavContextProps => {
-  const context = useContext(NavContext);
-  if (!context) {
-    throw new Error('useNavContext must be used within a NavProvider');
-  }
-  return context;
 };

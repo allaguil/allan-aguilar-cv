@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, Box } from '@mui/material';
 import { workImgs } from '../data/workImgs';
 import { cardDiv, cardBox, logo, pangolinFont } from './WorkExpCardGrid.styles';
 import { useFetchWorkData } from '../hooks/useFetchWorkData';
 import { useNavContext } from '../context/NavContext';
 import { Link } from 'react-router-dom';
+import { useCardContext } from '../context/CardContext';
 
 
 interface DataObject {
@@ -14,12 +15,8 @@ interface DataObject {
     img: string;
 }
 
-interface Props {
-    setCardSelected: React.Dispatch<React.SetStateAction<string>>;
-    cardSelected: string;
-}
-
-export const WorkExpCardGrid: React.FC<Props> = ({ setCardSelected, cardSelected }) => {
+export const WorkExpCardGrid: FC = () => {
+    const { setCardSelected } = useCardContext();
     const { navState, setNavState } = useNavContext();
     const [cardActiveHome, setCardActiveHome] = useState<number>(0);
     const [cardActive, setCardActive] = useState<number | null>(0);
