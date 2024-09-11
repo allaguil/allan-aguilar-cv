@@ -23,7 +23,7 @@ export const useFetchWorkData = () => {
 
       try {
         const url = `http://${DB_HOST}:${DB_PORT}`;
-        const response = await fetch(`${url}/api/data`);
+        const response = await fetch(`${url}/api/work`);
         const result = await response.json();
         setData(result);
 

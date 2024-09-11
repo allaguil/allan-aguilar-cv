@@ -65,7 +65,7 @@ app.post('/api/contact', async (req: Request, res: Response) => {
 
 
 // Endpoint para obtener datos
-app.get('/api/data', async (req: Request, res: Response): Promise<void> => {
+app.get('/api/work', async (req: Request, res: Response): Promise<void> => {
   try {
     // await client.connect();
     const db = client.db(DB_NAME);
