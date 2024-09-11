@@ -13,7 +13,7 @@ export const ContactFormGrid: FC = () => {
     company: '',
     companyUrl: '',
     role: '',
-    technologies: [] as string[],
+    skills: [] as string[],
     jobDescription: ''
   });
 
@@ -35,9 +35,9 @@ export const ContactFormGrid: FC = () => {
     const { value, checked } = e.target;
     setFormData(prev => ({
       ...prev,
-      technologies: checked
-        ? [...prev.technologies, value]
-        : prev.technologies.filter(t => t !== value)
+      skills: checked
+        ? [...prev.skills, value]
+        : prev.skills.filter(t => t !== value)
     }));
   };
 
@@ -61,6 +61,8 @@ export const ContactFormGrid: FC = () => {
       return;
     }
 
+    console.log(formData.skills);  // Check what's in skills before submitting
+
     try {
       const response = await fetch(`http://${DB_HOST}:${DB_PORT}/api/contact`, {
         method: 'POST',
@@ -77,7 +79,7 @@ export const ContactFormGrid: FC = () => {
           company: '',
           companyUrl: '',
           role: '',
-          technologies: [],
+          skills: [],
           jobDescription: ''
         });
       } else {
@@ -149,13 +151,13 @@ export const ContactFormGrid: FC = () => {
           margin="normal"
         />
         <FormGroup>
-          <FormLabel>Technologies</FormLabel>
-          {['HTML', 'CSS', 'JS', 'TS', 'REACTJS', 'NODEJS', 'AWS', 'AEM', 'VUEJS'].map((tech) => (
+          <FormLabel>Skills Required</FormLabel>
+          {['HTML', 'CSS', 'JavaScript', 'TypeScript', 'ReactJS', 'NodeJS', 'AWS', 'AEM', 'VueJS', 'Adobe Target', 'Adobe Analytics', 'Git', 'Material UI', 'Tailwind CSS', 'Bootstrap', 'Tealium', 'Angular', 'GraphQL', 'NextJS', 'NestJS', 'React Native', 'Jest'].map((tech) => (
             <FormControlLabel
               control={
                 <Checkbox
                   value={tech}
-                  checked={formData.technologies.includes(tech)}
+                  checked={formData.skills.includes(tech)}
                   onChange={handleCheckboxChange}
                 />
               }

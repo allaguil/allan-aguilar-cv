@@ -34,7 +34,9 @@ connectToMongo();
 // Endpoint para recibir los datos del formulario
 app.post('/api/contact', async (req: Request, res: Response) => {
   try {
-    const { name, email, modality, company, companyUrl, role, technologies, jobDescription } = req.body;
+    const { name, email, modality, company, companyUrl, role, skills, jobDescription } = req.body;
+
+    console.log("Skills received: ", skills);  // Check the skills here
 
     if (!name || !email || !modality || !company || !role || !jobDescription) {
       return res.status(400).json({ message: 'All fields are required' });
@@ -50,7 +52,7 @@ app.post('/api/contact', async (req: Request, res: Response) => {
       company,
       companyUrl,
       role,
-      technologies,
+      skills,
       jobDescription,
     });
 
