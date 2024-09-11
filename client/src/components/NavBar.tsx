@@ -19,7 +19,7 @@ import { useNavContext } from '../context/NavContext';
 import { FC } from 'react';
 
 // In Ts, to define an Array of only 'strings', we use :string[]
-const pages: string[] = ['work', 'skills', 'projects'];
+const pages: string[] = ['work', 'skills', 'projects', 'contact'];
 
 export const NavBar: FC = () => {
     const { setNavState } = useNavContext();

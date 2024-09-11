@@ -6,6 +6,8 @@ import { SkillInfo } from '../components/SkillInfo';
 
 import { useState } from 'react';
 
+import { globalComponentTitle } from '../styles/styles';
+
 export const SkillSet = () => {
 
     const [currentSkill, setCurrentSkill] = useState(1);
@@ -13,15 +15,7 @@ export const SkillSet = () => {
 
     return (
         <Container>
-            <Typography variant="h2" mb={3} mt={4} sx={{
-                fontFamily: 'Pangolin',
-                fontSize: '38px',
-                padding: '0 20px',
-                textAlign: {
-                    xs: 'center', md: 'left',
-                    animation: 'fadeIn 2s'
-                },
-            }}>Skills</Typography>
+            <Typography variant="h2" mb={3} mt={4} sx={globalComponentTitle}>Skills</Typography>
 
             <Container sx={{ display: 'flex', width: '100%', borderRadius: '4px', boxShadow: '0px 2px 10px 1px rgba(0,0,0,0.8)' }}>
 
