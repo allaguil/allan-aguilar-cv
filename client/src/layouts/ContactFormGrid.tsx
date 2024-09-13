@@ -1,3 +1,6 @@
+// Secuencia de Renderizado de un Functional Component 
+//debugger;
+// 1. Se importan todas las dependencias al principio del archivo
 import { FC, useState } from 'react';
 import { Container, Typography, TextField, Button, FormControlLabel, Radio, RadioGroup, FormGroup, Checkbox, FormLabel, Box } from '@mui/material';
 import { DB_HOST, DB_PORT } from '../config';
@@ -5,40 +8,38 @@ import { DB_HOST, DB_PORT } from '../config';
 import { globalComponentTitle } from '../styles/styles';
 import { textFieldStyles, textFormLabel, formControlLabel, formRadio } from './ContactFormGrid.styles';
 
+// 2. Se declara el Functional Component
 export const ContactFormGrid: FC = () => {
 
 
-
+  // 3. Se inicializan los estados del Functional Component
+  // Estado del formulario
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     modality: '',
+    jobPosition: '',
     company: '',
     companyUrl: '',
-    role: '',
+    jobType: '',
     skills: [] as string[],
     jobDescription: ''
   });
 
-
-
-
-
-
-
-
-
-
-
+  // Estado de los errores del formulario
   const [formErrors, setFormErrors] = useState({
     name: false,
     email: false,
     modality: false,
+    jobPosition: false,
     company: false,
-    role: false,
+    jobType: false,
     jobDescription: false
   });
 
+
+
+  // 4. Se declaran los handlers del Functional Component
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -55,13 +56,13 @@ export const ContactFormGrid: FC = () => {
   };
 
   const validateForm = () => {
-    debugger;
     const errors = {
       name: formData.name === '',
       email: formData.email === '',
       modality: formData.modality === '',
+      jobPosition: formData.jobPosition === '',
       company: formData.company === '',
-      role: formData.role === '',
+      jobType: formData.jobType === '',
       jobDescription: formData.jobDescription === ''
     };
     setFormErrors(errors);
@@ -86,16 +87,19 @@ export const ContactFormGrid: FC = () => {
 
       if (response.ok) {
         alert('Form submitted successfully!');
+
         setFormData({
           name: '',
           email: '',
           modality: '',
+          jobPosition: '',
           company: '',
           companyUrl: '',
-          role: '',
+          jobType: '',
           skills: [],
           jobDescription: ''
         });
+
       } else {
         alert('Error submitting the form.');
       }
@@ -104,14 +108,15 @@ export const ContactFormGrid: FC = () => {
     }
   };
 
+  // 5. Se retorna el JSX del Functional Component
   return (
 
     <Container>
       <Typography variant="h2" mb={3} mt={4} sx={globalComponentTitle}>Contact Form</Typography>
-      
+
       <form onSubmit={handleSubmit}>
 
-        {/* First Row */}
+        {/* 1st Row */}
         <Box sx={{ display: 'flex', flexDirection: 'row', gap: 5 }}>
 
           <Box sx={{ flex: 1 }}>
@@ -159,12 +164,21 @@ export const ContactFormGrid: FC = () => {
         </Box>
 
 
-
-
-
-
-
-
+        {/* 2nd Row */}
+        <RadioGroup name="jobPosition" value={formData.jobPosition} onChange={handleChange} sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginTop: 2,
+            gap: 1,
+            flex: 0.7,
+          }}>
+            <FormLabel sx={{ ...textFormLabel, marginRight: -2 }}>Job Position</FormLabel>
+            <FormControlLabel value="frontEnd" control={<Radio sx={formRadio} />} label="Front End Developer" sx={formControlLabel} />
+            <FormControlLabel value="backEnd" control={<Radio sx={formRadio} />} label="Back End Developer" sx={formControlLabel} />
+            <FormControlLabel value="fullStack" control={<Radio sx={formRadio} />} label="Full Stack Developer" sx={formControlLabel} />
+          </RadioGroup>
+          {formErrors.jobPosition && <p style={{ color: 'red' }}>Job position is required</p>}
 
 
 
@@ -188,19 +202,52 @@ export const ContactFormGrid: FC = () => {
           fullWidth
           margin="normal"
         />
-        <TextField
-          label="Role"
-          name="role"
-          value={formData.role}
-          onChange={handleChange}
-          error={formErrors.role}
-          helperText={formErrors.role && 'Role is required'}
-          fullWidth
-          margin="normal"
-        />
+
+
+
+
+
+
+        {/* 3rd Row */}
+        <RadioGroup name="jobType" value={formData.jobType} onChange={handleChange} sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginTop: 1,
+          gap: 2,
+        }}>
+          <FormLabel sx={{ ...textFormLabel, marginRight: -2 }}>Job Type</FormLabel>
+          <FormControlLabel value="full-time" control={<Radio sx={formRadio} />} label="Full-time" sx={formControlLabel} />
+          <FormControlLabel value="part-time" control={<Radio sx={formRadio} />} label="Part-time" sx={formControlLabel} />
+          <FormControlLabel value="contract" control={<Radio sx={formRadio} />} label="Contract" sx={formControlLabel} />
+          <FormControlLabel value="temporary" control={<Radio sx={formRadio} />} label="Temporary" sx={formControlLabel} />
+          <FormControlLabel value="freelance" control={<Radio sx={formRadio} />} label="Freelance" sx={formControlLabel} />
+          <FormControlLabel value="seasonal" control={<Radio sx={formRadio} />} label="Seasonal" sx={formControlLabel} />
+        </RadioGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <FormGroup>
           <FormLabel>Skills Required</FormLabel>
-          {['HTML', 'CSS', 'JavaScript', 'TypeScript', 'ReactJS', 'NodeJS', 'AWS', 'AEM', 'VueJS', 'Adobe Target', 'Adobe Analytics', 'Git', 'Material UI', 'Tailwind CSS', 'Bootstrap', 'Tealium', 'Angular', 'GraphQL', 'NextJS', 'NestJS', 'React Native', 'Jest'].map((tech) => (
+          {['HTML', 'CSS', 'Sass / Less', 'JavaScript', 'TypeScript', 'ReactJS', 'NextJS', 'React Native', 'VueJS', 'Angular', 'AEM', 'Adobe Target', 'Adobe Analytics', 'Git', 'Material UI', 'Tailwind CSS', 'Bootstrap', 'Chakra UI', 'Tealium', 'NodeJS', 'NestJS', 'ExpressJS', 'AWS', 'REST APIs', 'GraphQL', 'Jest', 'MongoDB'].map((tech) => (
             <FormControlLabel
               control={
                 <Checkbox
