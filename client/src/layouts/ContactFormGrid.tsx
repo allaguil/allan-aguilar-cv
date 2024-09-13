@@ -1,10 +1,13 @@
 import { FC, useState } from 'react';
-import { Container, Typography, TextField, Button, FormControlLabel, Radio, RadioGroup, FormGroup, Checkbox, FormLabel } from '@mui/material';
+import { Container, Typography, TextField, Button, FormControlLabel, Radio, RadioGroup, FormGroup, Checkbox, FormLabel, Box } from '@mui/material';
 import { DB_HOST, DB_PORT } from '../config';
 
 import { globalComponentTitle } from '../styles/styles';
+import { textFieldStyles } from './ContactFormGrid.styles';
 
 export const ContactFormGrid: FC = () => {
+
+
 
   const [formData, setFormData] = useState({
     name: '',
@@ -16,6 +19,16 @@ export const ContactFormGrid: FC = () => {
     skills: [] as string[],
     jobDescription: ''
   });
+
+
+
+
+
+
+
+
+
+
 
   const [formErrors, setFormErrors] = useState({
     name: false,
@@ -42,6 +55,7 @@ export const ContactFormGrid: FC = () => {
   };
 
   const validateForm = () => {
+    debugger;
     const errors = {
       name: formData.name === '',
       email: formData.email === '',
@@ -91,32 +105,62 @@ export const ContactFormGrid: FC = () => {
   };
 
   return (
+
     <Container>
+      <Typography variant="h2" mb={3} mt={4} sx={ globalComponentTitle }>Contact Form</Typography>
+      <form onSubmit={ handleSubmit }>
 
-      <Typography variant="h2" mb={3} mt={4} sx={globalComponentTitle}>Contact Form</Typography>
+        {/* First Row */}
+        <Box sx={{ display: 'flex', flexDirection: 'row', gap: 5 }}>
+          <Box sx={{ flex: 1 }}>
+            <TextField id="name" label="Name" name="name" type="text" variant="standard" sx={ textFieldStyles } />
+          </Box>
+
+          <Box sx={{ flex: 1 }}>
+            <TextField id="email" label="Email" name="email" type="email" variant="standard" sx={ textFieldStyles } />
+          </Box>
+        </Box>
 
 
-      <form onSubmit={handleSubmit}>
+
+       
+
+
+
+
         <TextField
-          label="Name"
-          name="name"
+          
+          
           value={formData.name}
           onChange={handleChange}
           error={formErrors.name}
           helperText={formErrors.name && 'Name is required'}
-          fullWidth
-          margin="normal"
+          
+          
         />
         <TextField
-          label="Email"
-          name="email"
+          
           value={formData.email}
           onChange={handleChange}
           error={formErrors.email}
           helperText={formErrors.email && 'Valid email is required'}
-          fullWidth
-          margin="normal"
+         
+          
         />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <FormLabel>Modality</FormLabel>
         <RadioGroup name="modality" value={formData.modality} onChange={handleChange}>
           <FormControlLabel value="remote" control={<Radio />} label="Remote" />
