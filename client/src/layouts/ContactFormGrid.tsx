@@ -3,7 +3,7 @@ import { Container, Typography, TextField, Button, FormControlLabel, Radio, Radi
 import { DB_HOST, DB_PORT } from '../config';
 
 import { globalComponentTitle } from '../styles/styles';
-import { textFieldStyles } from './ContactFormGrid.styles';
+import { textFieldStyles, textFormLabel, formControlLabel, formRadio } from './ContactFormGrid.styles';
 
 export const ContactFormGrid: FC = () => {
 
@@ -107,46 +107,59 @@ export const ContactFormGrid: FC = () => {
   return (
 
     <Container>
-      <Typography variant="h2" mb={3} mt={4} sx={ globalComponentTitle }>Contact Form</Typography>
-      <form onSubmit={ handleSubmit }>
+      <Typography variant="h2" mb={3} mt={4} sx={globalComponentTitle}>Contact Form</Typography>
+      
+      <form onSubmit={handleSubmit}>
 
         {/* First Row */}
         <Box sx={{ display: 'flex', flexDirection: 'row', gap: 5 }}>
+
           <Box sx={{ flex: 1 }}>
-            <TextField id="name" label="Name" name="name" type="text" variant="standard" sx={ textFieldStyles } />
+            <TextField
+              id="name"
+              label="Name"
+              name="name"
+              type="text"
+              variant="standard"
+              value={formData.name}   // estado
+              onChange={handleChange} // handler
+              error={formErrors.name} // Estado de error
+              helperText={formErrors.name && 'Name is required'} // Texto de ayuda
+              sx={textFieldStyles}    // Estilos personalizados
+            />
           </Box>
 
           <Box sx={{ flex: 1 }}>
-            <TextField id="email" label="Email" name="email" type="email" variant="standard" sx={ textFieldStyles } />
+            <TextField
+              id="email"
+              label="Email"
+              name="email"
+              type="email"
+              variant="standard"
+              value={formData.email}       // estado
+              onChange={handleChange}      // handler
+              error={formErrors.email}     // Estado de error
+              helperText={formErrors.email && 'Valid email is required'} // Texto de ayuda
+              sx={textFieldStyles}         // Estilos personalizados
+            />
           </Box>
+
+          <RadioGroup name="modality" value={formData.modality} onChange={handleChange} sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginTop: 2,
+            gap: 1,
+            flex: 0.7,
+          }}>
+            <FormLabel sx={textFormLabel}>Modality</FormLabel>
+            <FormControlLabel value="remote" control={<Radio sx={formRadio} />} label="Remote" sx={formControlLabel} />
+            <FormControlLabel value="hybrid" control={<Radio sx={formRadio} />} label="Hybrid" sx={formControlLabel} />
+          </RadioGroup>
         </Box>
 
 
 
-       
-
-
-
-
-        <TextField
-          
-          
-          value={formData.name}
-          onChange={handleChange}
-          error={formErrors.name}
-          helperText={formErrors.name && 'Name is required'}
-          
-          
-        />
-        <TextField
-          
-          value={formData.email}
-          onChange={handleChange}
-          error={formErrors.email}
-          helperText={formErrors.email && 'Valid email is required'}
-         
-          
-        />
 
 
 
@@ -157,15 +170,6 @@ export const ContactFormGrid: FC = () => {
 
 
 
-
-
-
-
-        <FormLabel>Modality</FormLabel>
-        <RadioGroup name="modality" value={formData.modality} onChange={handleChange}>
-          <FormControlLabel value="remote" control={<Radio />} label="Remote" />
-          <FormControlLabel value="hybrid" control={<Radio />} label="Hybrid" />
-        </RadioGroup>
         <TextField
           label="Company"
           name="company"
