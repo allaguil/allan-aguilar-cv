@@ -10,3 +10,9 @@ export const globalComponentTitle = {
     },
     animation: 'fadeIn 2s',
 }
+
+export const textErrors = {
+    color: 'red',
+    fontFamily: 'Pangolin',
+    fontSize: '16px',
+}

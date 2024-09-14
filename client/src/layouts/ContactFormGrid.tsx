@@ -5,7 +5,7 @@ import { FC, useState } from 'react';
 import { Container, Typography, TextField, Button, FormControlLabel, Radio, RadioGroup, FormGroup, Checkbox, FormLabel, Box } from '@mui/material';
 import { DB_HOST, DB_PORT } from '../config';
 
-import { globalComponentTitle } from '../styles/styles';
+import { globalComponentTitle, textErrors } from '../styles/styles';
 import { textFieldStyles, textFormLabel, formControlLabel, formRadio } from './ContactFormGrid.styles';
 
 // 2. Se declara el Functional Component
@@ -19,6 +19,7 @@ export const ContactFormGrid: FC = () => {
     email: '',
     modality: '',
     jobPosition: '',
+    jobLevel: '',
     company: '',
     companyUrl: '',
     jobType: '',
@@ -32,6 +33,7 @@ export const ContactFormGrid: FC = () => {
     email: false,
     modality: false,
     jobPosition: false,
+    jobLevel: false,
     company: false,
     jobType: false,
     jobDescription: false
@@ -61,6 +63,7 @@ export const ContactFormGrid: FC = () => {
       email: formData.email === '',
       modality: formData.modality === '',
       jobPosition: formData.jobPosition === '',
+      jobLevel: formData.jobLevel === '',
       company: formData.company === '',
       jobType: formData.jobType === '',
       jobDescription: formData.jobDescription === ''
@@ -93,6 +96,7 @@ export const ContactFormGrid: FC = () => {
           email: '',
           modality: '',
           jobPosition: '',
+          jobLevel: '',
           company: '',
           companyUrl: '',
           jobType: '',
@@ -130,6 +134,7 @@ export const ContactFormGrid: FC = () => {
               onChange={handleChange} // handler
               error={formErrors.name} // Estado de error
               helperText={formErrors.name && 'Name is required'} // Texto de ayuda
+              FormHelperTextProps={{ sx: textErrors }}
               sx={textFieldStyles}    // Estilos personalizados
             />
           </Box>
@@ -145,6 +150,7 @@ export const ContactFormGrid: FC = () => {
               onChange={handleChange}      // handler
               error={formErrors.email}     // Estado de error
               helperText={formErrors.email && 'Valid email is required'} // Texto de ayuda
+              FormHelperTextProps={{ sx: textErrors }}
               sx={textFieldStyles}         // Estilos personalizados
             />
           </Box>
@@ -165,20 +171,49 @@ export const ContactFormGrid: FC = () => {
 
 
         {/* 2nd Row */}
-        <RadioGroup name="jobPosition" value={formData.jobPosition} onChange={handleChange} sx={{
+        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+
+
+          {/* name="jobPosition" tiene que ser igual a la propiedad del state */}
+          <RadioGroup name="jobPosition" value={formData.jobPosition} onChange={handleChange} sx={{
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
             marginTop: 2,
             gap: 1,
-            flex: 0.7,
           }}>
-            <FormLabel sx={{ ...textFormLabel, marginRight: -2 }}>Job Position</FormLabel>
+            <FormLabel sx={textFormLabel}>Job Position</FormLabel>
             <FormControlLabel value="frontEnd" control={<Radio sx={formRadio} />} label="Front End Developer" sx={formControlLabel} />
             <FormControlLabel value="backEnd" control={<Radio sx={formRadio} />} label="Back End Developer" sx={formControlLabel} />
             <FormControlLabel value="fullStack" control={<Radio sx={formRadio} />} label="Full Stack Developer" sx={formControlLabel} />
           </RadioGroup>
-          {formErrors.jobPosition && <p style={{ color: 'red' }}>Job position is required</p>}
+          {formErrors.jobPosition && <Typography variant="body1" sx={textErrors}>Job Position is required</Typography>}
+
+
+          {/* name="jobLevel" tiene que ser igual a la propiedad del state */}
+          <RadioGroup name="jobLevel" value={formData.jobLevel} onChange={handleChange} sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginTop: 2,
+            gap: 1,
+            justifyContent: 'flex-end',
+          }}>
+            <FormLabel sx={textFormLabel}>Job Level</FormLabel>
+            <FormControlLabel value="senior" control={<Radio sx={formRadio} />} label="Senior" sx={formControlLabel} />
+            <FormControlLabel value="mid" control={<Radio sx={formRadio} />} label="Mid" sx={formControlLabel} />
+            <FormControlLabel value="junior" control={<Radio sx={formRadio} />} label="Junior" sx={formControlLabel} />
+          </RadioGroup>
+        </Box>
+
+
+
+
+
+
+
+
+
 
 
 
