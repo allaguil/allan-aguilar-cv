@@ -34,24 +34,24 @@ connectToMongo();
 // Endpoint para recibir los datos del formulario
 app.post('/api/contact', async (req: Request, res: Response) => {
   try {
-    const { name, email, modality, company, companyUrl, role, skills, jobDescription } = req.body;
+    const { name, email, modality, jobPosition, jobType, company, companyUrl, jobLevel, skills, jobDescription } = req.body;
 
-    console.log("Skills received: ", skills);  // Check the skills here
-
-    if (!name || !email || !modality || !company || !role || !jobDescription) {
+    if (!name || !email || !modality || !jobPosition || !jobType || !company || !companyUrl || !jobLevel || !skills || !jobDescription) {
       return res.status(400).json({ message: 'All fields are required' });
     }
 
-    const db = client.db(DB_NAME);
-    const collection = db.collection(DB_CONTACTCOLLECTION);
+    const db = client.db(DB_NAME); // OnlineResume
+    const collection = db.collection(DB_CONTACTCOLLECTION); // ContactData
 
     const result = await collection.insertOne({
       name,
       email,
       modality,
+      jobPosition,
+      jobType,
       company,
       companyUrl,
-      role,
+      jobLevel,
       skills,
       jobDescription,
     });
@@ -66,24 +66,19 @@ app.post('/api/contact', async (req: Request, res: Response) => {
 
 
 
+
+
 // Endpoint para obtener datos
 app.get('/api/work', async (req: Request, res: Response): Promise<void> => {
   try {
-    // await client.connect();
-    const db = client.db(DB_NAME);
-    const collection = db.collection(DB_WORKCOLLECTION);
+    const db = client.db(DB_NAME); // OnlineResume
+    const collection = db.collection(DB_WORKCOLLECTION); // ContactData
     const documents = await collection.find({}).sort({ order: 1 }).toArray();
     res.json(documents);
   } catch (error) {
     console.error('Error fetching data from MongoDB:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
-});
-
-// Ejemplo de Endpoint para pruebas
-app.post("/users", (req: Request, res: Response): void => {
-  console.log(DB_PORT, "Testing POST");
-  res.send("DATA RECEIVED!!");
 });
 
 // Iniciar el servidor
