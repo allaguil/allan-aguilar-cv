@@ -82,5 +82,12 @@
         "percentage": 90,
         "description": [ "Fundamentals: DOM Tree, Block and Inline Elements, Anchors and Navigation, Tags & Attributes, Lists, Forms & Input types, imports, images, events, headings, tables" ,"Meta Tags" ,"SEO" ,"iFrame", "Responsive Images", "IndexedDB", "Workers: web worker, service worker, shared worker" ],
         "order": 12
+    },
+    {
+        "skill": "MongoDB",
+        "level": "Learner Level",
+        "percentage": 45,
+        "description": [ "TBD" ],
+        "order": 13
     }
 ]

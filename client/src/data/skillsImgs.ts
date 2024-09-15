@@ -9,6 +9,7 @@ import git from '../assets/git.svg';
 import jQuery from '../assets/jQuery.svg';
 import angular from '../assets/angular.svg';
 import html from '../assets/html.svg';
+import mongodb from '../assets/mongodb.svg';
 
 
 export const skillsImgs = [
@@ -72,6 +73,9 @@ export const skillsImgs = [
         technology: "HTML",
         img: html,
     },
-    
-
+    {
+        id: 13,
+        technology: "MongoDB",
+        img: mongodb,
+    },
 ]

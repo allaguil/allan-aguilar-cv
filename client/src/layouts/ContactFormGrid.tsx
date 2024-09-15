@@ -186,38 +186,52 @@ export const ContactFormGrid: FC = () => {
           </RadioGroup>
         </Box>
 
+
+
+
         {/* Job Position, Job Type */}
         <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
 
           {/* name="jobPosition" tiene que ser igual a la propiedad del state */}
-          <RadioGroup name="jobPosition" value={formData.jobPosition} onChange={handleChange} sx={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            marginTop: 2,
-            gap: 1,
-          }}>
-            <FormLabel sx={textFormLabel}>Job Position</FormLabel>
-            <FormControlLabel value="front-end" control={<Radio sx={formRadio} />} label="Front End Developer" sx={formControlLabel} />
-            <FormControlLabel value="back-end" control={<Radio sx={formRadio} />} label="Back End Developer" sx={formControlLabel} />
-            <FormControlLabel value="full-stack" control={<Radio sx={formRadio} />} label="Full Stack Developer" sx={formControlLabel} />
-          </RadioGroup>
-          {formErrors.jobPosition && <Typography variant="body1" sx={textErrors}>Job Position is required</Typography>}
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+            <RadioGroup name="jobPosition" value={formData.jobPosition} onChange={handleChange} sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginTop: 2,
+              gap: 1,
+            }}>
+              <FormLabel sx={textFormLabel}>Job Position</FormLabel>
+              <FormControlLabel value="front-end" control={<Radio sx={formRadio} />} label="Front End Developer" sx={formControlLabel} />
+              <FormControlLabel value="back-end" control={<Radio sx={formRadio} />} label="Back End Developer" sx={formControlLabel} />
+              <FormControlLabel value="full-stack" control={<Radio sx={formRadio} />} label="Full Stack Developer" sx={formControlLabel} />
+            </RadioGroup>
+            {formErrors.jobPosition && <Typography variant="body1" sx={{ ...textErrors, marginTop: '-10px' }}>Job Position is required</Typography>}
+          </Box>
 
-          <RadioGroup name="jobType" value={formData.jobType} onChange={handleChange} sx={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            marginTop: 1,
-            gap: 1,
-          }}>
-            <FormLabel sx={textFormLabel}>Job Type</FormLabel>
-            <FormControlLabel value="full-time" control={<Radio sx={formRadio} />} label="Full-time" sx={formControlLabel} />
-            <FormControlLabel value="part-time" control={<Radio sx={formRadio} />} label="Part-time" sx={formControlLabel} />
-            <FormControlLabel value="freelance" control={<Radio sx={formRadio} />} label="Freelance" sx={formControlLabel} />
-          </RadioGroup>
 
+
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+            <RadioGroup name="jobType" value={formData.jobType} onChange={handleChange} sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginTop: 2,
+              gap: 1,
+            }}>
+              <FormLabel sx={textFormLabel}>Job Type</FormLabel>
+              <FormControlLabel value="full-time" control={<Radio sx={formRadio} />} label="Full-time" sx={formControlLabel} />
+              <FormControlLabel value="part-time" control={<Radio sx={formRadio} />} label="Part-time" sx={formControlLabel} />
+              <FormControlLabel value="freelance" control={<Radio sx={formRadio} />} label="Freelance" sx={formControlLabel} />
+            </RadioGroup>
+            {formErrors.jobType && <Typography variant="body1" sx={{ ...textErrors, marginTop: '-10px' }}>Job Type is required</Typography>}
+          </Box>
         </Box>
+
+
+
+
+        
 
         {/* Company, CompanyURL, Job Level */}
         <Box sx={{ display: 'flex', flexDirection: 'row', marginTop: 2, gap: 5 }}>
@@ -248,7 +262,7 @@ export const ContactFormGrid: FC = () => {
               value={formData.companyUrl}       // estado
               onChange={handleChange}      // handler
               error={formErrors.email}     // Estado de error
-              helperText={formErrors.email && 'Valid email is required'} // Texto de ayuda
+              helperText={formErrors.email && 'Valid Company URL is required'} // Texto de ayuda
               FormHelperTextProps={{ sx: textErrors }}
               sx={textFieldStyles}         // Estilos personalizados
             />
