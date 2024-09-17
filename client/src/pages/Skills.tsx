@@ -1,7 +1,9 @@
 import { SkillSet } from "../shared/SkillSet"
 
-export const Skills = () => {
+const Skills = () => {
   return (
     <SkillSet />
   )
 }
+
+export default Skills;

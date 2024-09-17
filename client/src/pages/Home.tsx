@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { SkillSet } from '../shared/SkillSet';
 import { ProjectsList } from '../shared/ProjectsList';
 
-export const Home: FC = () => {
+const Home: FC = () => {
   return (
     <>
         <WorkExp />
@@ -12,3 +12,5 @@ export const Home: FC = () => {
     </>
   )
 }
+
+export default Home;
