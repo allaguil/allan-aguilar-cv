@@ -1,16 +1,18 @@
 import React, { FC, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { CircularProgress, Box } from '@mui/material';
 
 import { NavBar } from './components/NavBar';
 import { Banner } from './components/Banner';
 import { NavProvider } from './context/NavContext';
 import { CardProvider } from './context/CardContext';
+import withDelay from './utils/withDelay';
 
-const Home = React.lazy( () => import('./pages/Home') );
-const Work = React.lazy( () => import('./pages/Work') );
-const Skills = React.lazy( () => import('./pages/Skills') );
-const Projects = React.lazy( () => import('./pages/Projects') );
-const Contact = React.lazy( () => import('./pages/Contact') );
+const Home = withDelay(React.lazy(() => import('./pages/Home')), 2000);
+const Work = withDelay(React.lazy(() => import('./pages/Work')), 2000);
+const Skills = withDelay(React.lazy(() => import('./pages/Skills')), 2000);
+const Projects = withDelay(React.lazy(() => import('./pages/Projects')), 2000);
+const Contact = withDelay(React.lazy(() => import('./pages/Contact')), 2000);
 
 import './index.css' // Global CSS Styles
 
@@ -20,7 +22,9 @@ export const CvApp: FC = () => {
       <CardProvider>
         <NavBar />
         <Banner />
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+          <CircularProgress />
+        </Box>}>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/work' element={<Work />} />
