@@ -7,7 +7,7 @@ const Home: FC = () => {
   return (
     <>
         <WorkExp />
-        <SkillSet />
+        {/* <SkillSet /> */}
         <ProjectsList />
     </>
   )

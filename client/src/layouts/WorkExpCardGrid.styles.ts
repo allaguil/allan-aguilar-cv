@@ -1,5 +1,5 @@
 export const cardDiv = {
-    maxWidth: 250,
+    maxWidth: '250px',
     height: 250,
     margin: { xs: '20px auto', lg: '20px' },
     boxShadow: '0px 2px 10px 1px rgba(0,0,0,0.2)',
@@ -10,7 +10,8 @@ export const cardDiv = {
 
 export const cardBox = {
     height: '140px',
-    width: '220px',
+    // width: '220px',
+    margin: '0 auto',
 }
 
 export const logo = {

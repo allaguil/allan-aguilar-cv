@@ -15,16 +15,16 @@
     },
     {
         "skill": "AEM",
-        "level": "Skilled Level",
-        "percentage": 80,
+        "level": "Learner Level",
+        "percentage": 50,
         "description": [ "Fundamentals: Content Repository, Foundation Components and Core Components, Editable Templates and Static Templates, Content Authoring, Content Workflow, Digital Asset Management (DAM)" ,"Classic UI:" ,"Touch UI:", "AEM Infrastructure: Pros and Cons of the two ways of deploying AEM, with Standalone Server (integrated Jetty Web Server) and Web Application Deployment (within a third-party application server)", "Apache Sling Framework for RESTful Web Applications based on extensible Content Tree like Java Content Repository (JCR). In AEM, Sling uses a JCR to fetch content from the CRX Content Repository and provide that content to the users."],
         "order": 3
     },
     {
         "skill": "Vue JS",
-        "level": "Learner Level",
-        "percentage": 60,
-        "description": [ "Test1" ,"Test2" ,"Test3" ,"Test4" ],
+        "level": "Skilled Level",
+        "percentage": 85,
+        "description": [ "Lifecycle Hooks (created, mounted, updated, unmounted)" ,"provide/inject" ,"" ,"mixins", "extends", "directives", "refs/$refs", "render", "emits", "root/$root", "parent/$parent", "data()" ],
         "order": 4
     },
     {

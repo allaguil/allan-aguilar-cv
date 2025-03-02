@@ -1,4 +1,4 @@
-import mitsubishi from '../assets/mitsubishi.svg';
+import mini from '../assets/mini.svg';
 import intel from '../assets/intel.svg';
 import citiBank from '../assets/citiBank.svg';
 import westernUnion from '../assets/westernUnion.svg';
@@ -6,8 +6,8 @@ import ciscoSystems from '../assets/ciscoSystems.svg';
 
 export const workImgs = [
     {
-        company: "Mitsubishi",
-        img: mitsubishi,
+        company: "Mini Cooper",
+        img: mini,
     },
     {
         company: "Intel Corporation",

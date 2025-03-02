@@ -1,13 +1,23 @@
 [
     {
+        "company": "Mini Cooper",
+        "role": "Senior Developer",
+        "year": "(March 2021 - Present)",
+        "description": "Responsible of developing new SPA with VueJS and ReactJS integrated in AEM as the CMS. In charge of responsabilities like integrating RESTful API services in order to handle the HTTP requests  using Asynchronous operations to configure the different endpoints in order to send or receive data from the Web Server. The fetch promise payload response that they return will be used to be rendered in the DOM.",
+        "technologies": "AEM, VueJS, ReactJS, NodeJS, Sass, JS, Bitbucket, Jira, Scrum and Agile",
+        "urlValue": "www.miniusa.com",
+        "url": "https://www.miniusa.com/",
+        "order": 1
+    },
+    {
         "company": "Intel Corporation",
         "role": "Web Analytics Analyst",
-        "year": "(June 2019 - March 2021)",
+        "year": "(June 2019 - December 2020)",
         "description": "Responsible for creating and maintaining the Adobe Analytics Tracking implementation to ensure data is being collected properly for Business Data Analysis. Also responsible for creating new Adobe Target Recommendation Activities to display new Product Components to the users based on their afinities, this implementation requires technical knowledge in Adobe Target to develop the Design implementation using Velocity Language and also to create new Criterias to display the right Products based on the Criteria Sequence data ingested in the Target Catalog using Adobe Target Feeds.",
         "technologies": "AEM, Adobe Target, Adobe Analytics, Tealium, JS, jQuery, CSS, Bootstrap, GitLab, Jira, Scrum and Agile",
         "urlValue": "www.intel.com",
         "url": "https://www.intel.com/",
-        "order": 1
+        "order": 2
     },
     {
         "company": "Citi Bank",
@@ -17,7 +27,7 @@
         "technologies": "AEM, Adobe Target, Adobe Analytics, Ensighten, ObservePoint, HTML, CSS, Bootstrap, JS, jQuery, Jira",
         "urlValue": "www.citi.com",
         "url": "https://www.citi.com/",
-        "order": 2
+        "order": 3
     },
     {
         "company": "Western Union",
@@ -27,7 +37,7 @@
         "technologies": "AEM, HTML, CSS, Jira",
         "urlValue": "www.westernunion.com",
         "url": "https://www.westernunion.com/",
-        "order": 3
+        "order": 4
     },
     {
         "company": "Cisco Systems",
@@ -37,6 +47,6 @@
         "technologies": "HTML, Photoshop, Illustrator",
         "urlValue": "Behance Profile",
         "url": "https://www.behance.net/allaguil",
-        "order": 4
+        "order": 5
     }
 ]

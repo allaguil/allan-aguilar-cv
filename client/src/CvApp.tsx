@@ -8,11 +8,11 @@ import { NavProvider } from './context/NavContext';
 import { CardProvider } from './context/CardContext';
 import withDelay from './utils/withDelay';
 
-const Home = withDelay(React.lazy(() => import('./pages/Home')), 2000);
-const Work = withDelay(React.lazy(() => import('./pages/Work')), 2000);
-const Skills = withDelay(React.lazy(() => import('./pages/Skills')), 2000);
-const Projects = withDelay(React.lazy(() => import('./pages/Projects')), 2000);
-const Contact = withDelay(React.lazy(() => import('./pages/Contact')), 2000);
+const Home = withDelay(React.lazy(() => import('./pages/Home')), 500);
+const Work = withDelay(React.lazy(() => import('./pages/Work')), 500);
+const Skills = withDelay(React.lazy(() => import('./pages/Skills')), 500);
+const Projects = withDelay(React.lazy(() => import('./pages/Projects')), 500);
+const Contact = withDelay(React.lazy(() => import('./pages/Contact')), 500);
 
 import './index.css' // Global CSS Styles
 
